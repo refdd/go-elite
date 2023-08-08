@@ -16,7 +16,7 @@ function TourContainer() {
         className="mySwiper"
         breakpoints={{
           280: {
-            slidesPerView: 1.1,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           768: {

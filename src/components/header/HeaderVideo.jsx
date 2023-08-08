@@ -2,14 +2,7 @@ import React from "react";
 function HeaderVideo() {
   return (
     <header className="relative">
-      <video
-        className="w-full h-auto"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="path/to/poster.jpg" // Provide a fallback image for the video
-      >
+      <video className="w-full h-auto" autoPlay muted loop playsInline>
         <source src="" type="video/mp4" />
         {/* Add additional source tags for different video formats */}
       </video>
