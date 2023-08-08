@@ -10,10 +10,7 @@ function HeaderVideo() {
         playsInline
         poster="path/to/poster.jpg" // Provide a fallback image for the video
       >
-        <source
-          src="https://youtu.be/IWJxX8h3VwQ?list=RDIWJxX8h3VwQ"
-          type="video/mp4"
-        />
+        <source src="" type="video/mp4" />
         {/* Add additional source tags for different video formats */}
       </video>
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
