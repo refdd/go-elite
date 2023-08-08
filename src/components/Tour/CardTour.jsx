@@ -5,14 +5,14 @@ function CardTour({ imgSrc }) {
   return (
     <div className="rounded-[32px] bg-white border-[0.5px] border-[#B4B8BB] my-5 md:hover:shadow-md md:hover:scale-[1.01] transition-all">
       <div className="flex flex-col gap-4 p-4">
-        <div className="relative w-full ">
+        <div className="relative w-full h-[213px]">
           <Image
             alt="tourImage"
             src={imgSrc}
-            sizes="100vw"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={true}
-            quality={75}
-            className="rounded-2xl object-cover w-full h-auto md:h-[213px]"
+            className="rounded-2xl object-cover"
           />
         </div>
         {/* titel */}
