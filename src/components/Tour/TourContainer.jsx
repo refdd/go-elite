@@ -9,7 +9,7 @@ import imageTour3 from "../../../public/assets/image/tourimage (1).webp";
 import imageTour4 from "../../../public/assets/image/tourimage (4).webp";
 import dynamic from "next/dynamic";
 const PreloadableComponent = dynamic(() => import("./CardTour"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <div className="w-full h-[600px]">Loading...</div>,
   ssr: false,
 });
 function TourContainer() {
