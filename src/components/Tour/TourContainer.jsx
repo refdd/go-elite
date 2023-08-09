@@ -2,11 +2,16 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import CardTour from "./CardTour";
+// import CardTour from "./CardTour";
 import imageTour1 from "../../../public/assets/image/tourimage (1).webp";
 import imageTour2 from "../../../public/assets/image/tourimage (2).webp";
-import imageTour3 from "../../../public/assets/image/tourimage (3).webp";
+import imageTour3 from "../../../public/assets/image/tourimage (1).webp";
 import imageTour4 from "../../../public/assets/image/tourimage (4).webp";
+import dynamic from "next/dynamic";
+const PreloadableComponent = dynamic(() => import("./CardTour"), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 function TourContainer() {
   return (
     <div className="">
@@ -30,22 +35,22 @@ function TourContainer() {
         }}
       >
         <SwiperSlide>
-          <CardTour imgSrc={imageTour1} />
+          <PreloadableComponent imgSrc={imageTour1} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardTour imgSrc={imageTour2} />
+          <PreloadableComponent imgSrc={imageTour2} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardTour imgSrc={imageTour3} />
+          <PreloadableComponent imgSrc={imageTour3} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardTour imgSrc={imageTour4} />
+          <PreloadableComponent imgSrc={imageTour4} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardTour imgSrc={imageTour3} />
+          <PreloadableComponent imgSrc={imageTour3} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardTour imgSrc={imageTour2} />
+          <PreloadableComponent imgSrc={imageTour2} />
         </SwiperSlide>
       </Swiper>
     </div>

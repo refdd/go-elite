@@ -12,14 +12,14 @@ function CardDestination({ imgSrc, country }) {
         <div className="absolute top-0 left-0 w-full h-full ">
           <div className="relative w-full h-full transition-all group-hover:h-[101px]">
             <Image
-              alt="tourImage"
+              alt="destinationImage"
               src={imgSrc}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={true}
               className="rounded-2xl object-cover"
             />
-            <div className="absolute top-[70%] left-[20%] -translate-x-1/2 -translate-y-1/2 group-hover:hidden">
+            <div className="absolute top-[70%] left-[10%] -translate-x-0 -translate-y-1/2 group-hover:hidden">
               <span className="text-2xl font-bold font-sans capitalize text-white">
                 {country}
               </span>

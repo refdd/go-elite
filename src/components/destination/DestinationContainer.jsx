@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import CardDestination from "./CardDestination";
 import image1 from "../../../public/assets/image/tourimage (1).webp";
 import image2 from "../../../public/assets/image/tourimage (2).webp";
-import image3 from "../../../public/assets/image/tourimage (3).webp";
+import image3 from "../../../public/assets/image/tourimage (1).webp";
 import image4 from "../../../public/assets/image/tourimage (4).webp";
 function DestinationContainer() {
   return (
@@ -36,7 +36,7 @@ function DestinationContainer() {
           <CardDestination imgSrc={image4} country={"Cairo Nile Cruises"} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardDestination imgSrc={image3} country={"Morocco"} />
+          <CardDestination imgSrc={image2} country={"Morocco"} />
         </SwiperSlide>
         <SwiperSlide>
           <CardDestination imgSrc={image1} country={"Jordan"} />
