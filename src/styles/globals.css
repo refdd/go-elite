@@ -5,3 +5,19 @@
 body {
   background-color: #fafafa;
 }
+.offers-container {
+  padding-bottom: 90px !important;
+}
+.offers-container .swiper-pagination {
+  display: block !important;
+  bottom: -4px !important;
+}
+.offers-container .swiper-pagination-bullet {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+.offers-container .swiper-pagination-bullet-active {
+  background-color: #009b72 !important;
+}
