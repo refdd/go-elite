@@ -14,6 +14,7 @@ export default function Home() {
       <HeaderVideo />
       <RowTour />
       <RowDestination />
+      <RowDestination />
     </div>
   );
 }
