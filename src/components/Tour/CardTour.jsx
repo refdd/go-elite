@@ -11,6 +11,8 @@ function CardTour({ imgSrc }) {
             priority={true}
             decoding="async"
             fill
+            quality={75}
+            placeholder="blur"
             src={imgSrc}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="rounded-2xl object-cover"
