@@ -1,15 +1,21 @@
 import React from "react";
+
 function HeaderVideo() {
   return (
     <header className="relative">
-      <video className="w-full h-auto" autoPlay muted loop playsInline>
-        <source src="" type="video/mp4" />
-        {/* Add additional source tags for different video formats */}
-      </video>
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-        <h1 className="text-4xl font-bold mb-4">Your Video Header</h1>
-        <p className="text-lg">Add your subtitle here</p>
+      <div>
+        <div className="w-full h-full ">
+          <video
+            className=" w-full h-[400px] object-cover"
+            src={require("../../../public/assets/video_PgjNKFYS.mp4")}
+            autoPlay
+            loop
+            muted
+          />
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e]  ">
+          {" "}
+        </div>
       </div>
     </header>
   );
