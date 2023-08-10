@@ -8,6 +8,7 @@ import RowOffers from "@/components/offers/RowOffers";
 import Head from "next/head";
 import RowGuides from "@/components/guides/RowGuides";
 import RequestQuote from "@/components/RequestQuote/RequestQuote";
+import Trustus from "@/components/Trustus/Trustus";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function Home() {
       <RowOffers />
       <RowGuides />
       <RequestQuote />
+      <Trustus />
     </div>
   );
 }
