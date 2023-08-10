@@ -9,9 +9,10 @@ function CardTour({ imgSrc }) {
           <Image
             alt="tourImage"
             priority={true}
+            loading="eager"
             decoding="async"
             fill
-            quality={75}
+            quality={50}
             placeholder="blur"
             src={imgSrc}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
