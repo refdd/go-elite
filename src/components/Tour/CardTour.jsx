@@ -9,7 +9,6 @@ function CardTour({ imgSrc }) {
           <Image
             alt="tourImage"
             priority={true}
-            decoding="async"
             fill
             quality={75}
             placeholder="blur"
