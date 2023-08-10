@@ -7,6 +7,7 @@ import RowDestination from "@/components/destination/RowDestination";
 import RowOffers from "@/components/offers/RowOffers";
 import Head from "next/head";
 import RowGuides from "@/components/guides/RowGuides";
+import RequestQuote from "@/components/RequestQuote/RequestQuote";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function Home() {
       <RowDestination />
       <RowOffers />
       <RowGuides />
+      <RequestQuote />
     </div>
   );
 }

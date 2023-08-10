@@ -3,8 +3,7 @@ import React from "react";
 
 function GuideCard({ imgSrc }) {
   return (
-    <div>
-      ;
+    <div className="my-5">
       <div className="flex flex-col gap-3 shadow-md rounded-t-[32px] ">
         <div className="relative w-full h-[251px] ">
           <Image

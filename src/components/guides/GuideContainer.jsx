@@ -8,7 +8,7 @@ import GuideCard from "./GuideCard";
 
 function GuideContainer() {
   return (
-    <div className="mt-5 ">
+    <div className=" ">
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
