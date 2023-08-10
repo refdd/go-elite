@@ -10,6 +10,8 @@ import RowGuides from "@/components/guides/RowGuides";
 import RequestQuote from "@/components/RequestQuote/RequestQuote";
 import Trustus from "@/components/Trustus/Trustus";
 import image1 from "../../public/assets/image/tourimage (1).webp";
+import FAQs from "@/components/FAQs/FAQs";
+import Footer from "@/components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -30,6 +32,8 @@ export default function Home() {
       <RowGuides />
       <RequestQuote />
       <Trustus />
+      <FAQs />
+      <Footer />
     </div>
   );
 }
