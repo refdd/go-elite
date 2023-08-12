@@ -35,7 +35,9 @@ function NavBar() {
                 <span>Home</span>
               </li>
               <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-                <span>Luxury egypt tours </span>
+                <Link href={"/Tours"}>
+                  <span>Luxury egypt tours </span>
+                </Link>
               </li>
               <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
                 <span>Destinations</span>
