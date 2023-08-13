@@ -13,7 +13,7 @@ import CardTour from "./CardTour";
 //   loading: () => <div className="w-full h-[600px]">Loading...</div>,
 //   ssr: false,
 // });
-function TourContainer() {
+function TourContainer({ packages }) {
   return (
     <div className="">
       <Swiper
@@ -35,24 +35,11 @@ function TourContainer() {
           },
         }}
       >
-        <SwiperSlide>
-          <CardTour imgSrc={imageTour1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardTour imgSrc={imageTour2} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardTour imgSrc={imageTour3} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardTour imgSrc={imageTour4} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardTour imgSrc={imageTour3} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardTour imgSrc={imageTour2} />
-        </SwiperSlide>
+        {packages?.map((tour) => (
+          <SwiperSlide key={tour.id}>
+            <CardTour id={tour.id} imgSrc={tour?.image?.image_url} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

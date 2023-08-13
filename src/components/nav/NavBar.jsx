@@ -5,13 +5,12 @@ import MenuBar from "./MenuBar";
 import Link from "next/link";
 import ListMenu from "./ListMenu";
 import { AiOutlinePlus } from "react-icons/ai";
-function NavBar({ logosrc }) {
+function NavBar() {
   const [menuBar, setMenuBar] = useState(false);
 
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };
-  console.log(logosrc);
   return (
     <div className="container mx-auto  px-4 md:px-0">
       <div className="grid grid-cols-2 md:grid-cols-7 items-center  ">
@@ -20,7 +19,7 @@ function NavBar({ logosrc }) {
           <div className=" relative w-[100%] h-[80px]">
             <Image
               alt="logo"
-              src={logosrc}
+              src={logo}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={true}

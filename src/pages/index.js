@@ -15,7 +15,7 @@ import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ logo }) {
+export default function Home({ packages }) {
   return (
     <div>
       <Head>
@@ -25,9 +25,9 @@ export default function Home({ logo }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href={`${image1.src}`} as="image" />
       </Head>
-      <NavBar logosrc={logo?.image.image_url} />
+      <NavBar />
       <HeaderVideo />
-      <RowTour />
+      <RowTour packages={packages} />
       <RowDestination />
       <RowOffers />
       <RowGuides />
@@ -39,12 +39,12 @@ export default function Home({ logo }) {
   );
 }
 export async function getStaticProps() {
-  const logo = await fetchApi(
-    `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
+  const packages = await fetchApi(
+    `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active`
   );
   return {
     props: {
-      logo: logo.row,
+      packages: packages.rows,
     },
     revalidate: 10,
   };
