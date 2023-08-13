@@ -45,6 +45,5 @@ export async function getStaticProps() {
     props: {
       packages: packages.rows,
     },
-    revalidate: 10,
   };
 }

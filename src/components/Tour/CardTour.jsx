@@ -8,13 +8,13 @@ function CardTour({ imgSrc }) {
         <div className="relative w-full h-[213px]">
           <Image
             alt="tourImage"
+            src={imgSrc}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             loading="lazy"
             quality={60}
             placeholder="blur"
             blurDataURL={imgSrc}
-            src={imgSrc}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="rounded-2xl object-cover"
           />
         </div>
