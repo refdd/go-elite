@@ -8,9 +8,9 @@ function CardTour({ imgSrc }) {
         <div className="relative w-full h-[213px]">
           <Image
             alt="tourImage"
-            priority={true}
             fill
-            quality={75}
+            loading="lazy"
+            quality={60}
             placeholder="blur"
             blurDataURL={imgSrc}
             src={imgSrc}
