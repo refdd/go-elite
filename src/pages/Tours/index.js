@@ -1,5 +1,8 @@
+import FAQs from "@/components/FAQs/FAQs";
 import FilterContainer from "@/components/Filter/FilterContainer";
+import Footer from "@/components/Footer/Footer";
 import From from "@/components/From/From";
+import Trustus from "@/components/Trustus/Trustus";
 import MainHead from "@/components/header/MainHead ";
 import ListTourContainer from "@/components/listTour/ListTourContainer";
 import NavBar from "@/components/nav/NavBar";
@@ -27,6 +30,9 @@ function index() {
           <From />
         </div>
       </div>
+      <Trustus />
+      <FAQs />
+      <Footer />
     </div>
   );
 }

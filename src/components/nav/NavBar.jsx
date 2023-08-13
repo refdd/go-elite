@@ -32,7 +32,9 @@ function NavBar() {
           <div className=" flex items-center gap-10">
             <ul className="flex items-center gap-7">
               <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-                <span>Home</span>
+                <Link href={"/"}>
+                  <span>Home</span>
+                </Link>
               </li>
               <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
                 <Link href={"/Tours"}>
