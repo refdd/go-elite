@@ -12,9 +12,10 @@ import Trustus from "@/components/Trustus/Trustus";
 import image1 from "../../public/assets/image/tourimage (1).webp";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
+import { baseUrl, fetchApi } from "../../utils/featchApi";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ logo }) {
   return (
     <div>
       <Head>
@@ -24,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href={`${image1.src}`} as="image" />
       </Head>
-      <NavBar />
+      <NavBar logosrc={logo?.image.image_url} />
       <HeaderVideo />
       <RowTour />
       <RowDestination />
@@ -36,4 +37,15 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+export async function getStaticProps() {
+  const logo = await fetchApi(
+    `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
+  );
+  return {
+    props: {
+      logo: logo.row,
+    },
+    revalidate: 10,
+  };
 }
