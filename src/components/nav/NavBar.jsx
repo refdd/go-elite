@@ -11,17 +11,15 @@ function NavBar({ logosrc }) {
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };
+  console.log(logosrc);
   return (
     <div className="container mx-auto  px-4 md:px-0">
-      <div className="grid grid-cols-2 md:grid-cols-7 items-center py-2  ">
+      <div className="grid grid-cols-2 md:grid-cols-7 items-center  ">
         {/* logo  */}
         <div className="md:col-span-1">
           <div className=" relative w-[100%] h-[80px]">
             <Image
               alt="logo"
-              loader={() => {
-                return `${logosrc}`;
-              }}
               src={logosrc}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
