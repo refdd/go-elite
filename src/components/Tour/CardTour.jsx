@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function CardTour({ imgSrc, title, price, slug }) {
+function CardTour({ imgSrc, title, price, slug, description }) {
   return (
     <div className="rounded-[32px] bg-white border-[0.5px] border-[#B4B8BB] my-5 md:hover:shadow-md md:hover:scale-[1.01] transition-all">
       <div className="flex flex-col gap-4 p-4">
@@ -27,9 +27,12 @@ function CardTour({ imgSrc, title, price, slug }) {
         </div>
         {/* desc */}
         <div className="">
-          <p className="text-[16px] font-sans text-[#4E5255] font-normal capitalize">
-            Explore the Highlights of Morocco by visiting the...
-          </p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: description?.substring(0, 90),
+            }}
+            className="text-[16px] font-sans text-[#4E5255] font-normal capitalize"
+          ></div>
         </div>
         {/* price */}
         <div className="flex items-center gap-2 ">
@@ -37,7 +40,7 @@ function CardTour({ imgSrc, title, price, slug }) {
             From
           </span>
           <span className="text-xl  font-sans text-[#00229E] font-extrabold capitalize">
-            US$ {parseInt(price).toLocaleString()}
+            US$ {price}
           </span>
         </div>
         <hr />

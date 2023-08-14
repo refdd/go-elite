@@ -44,6 +44,7 @@ function TourContainer({ packages }) {
               title={tour?.title?.substring(0, 50)}
               price={tour?.start_price}
               slug={tour?.slug}
+              description={tour?.short_body}
             />
           </SwiperSlide>
         ))}
