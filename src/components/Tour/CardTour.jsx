@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-function CardTour({ imgSrc }) {
+function CardTour({ imgSrc, title, price, slug }) {
   return (
     <div className="rounded-[32px] bg-white border-[0.5px] border-[#B4B8BB] my-5 md:hover:shadow-md md:hover:scale-[1.01] transition-all">
       <div className="flex flex-col gap-4 p-4">
@@ -21,7 +22,7 @@ function CardTour({ imgSrc }) {
         {/* titel */}
         <div className="">
           <p className="text-lg font-sans text-[#4E5255] font-bold capitalize">
-            Highlights of Morocco and Chefchaouen Tour
+            {title}
           </p>
         </div>
         {/* desc */}
@@ -36,15 +37,17 @@ function CardTour({ imgSrc }) {
             From
           </span>
           <span className="text-xl  font-sans text-[#00229E] font-extrabold capitalize">
-            US$1634
+            US$ {parseInt(price).toLocaleString()}
           </span>
         </div>
         <hr />
         <div className="flex justify-end">
           <div className="py-3 px-9 rounded-3xl border-[3px] border-[#667ac533] cursor-pointer">
-            <button className="text-[#00186F] text-[16px] font-sans font-medium capitalize">
-              View Tour
-            </button>
+            <Link href={`/Tours/${slug}`}>
+              <button className="text-[#00186F] text-[16px] font-sans font-medium capitalize">
+                View Tour
+              </button>
+            </Link>
           </div>
         </div>
       </div>

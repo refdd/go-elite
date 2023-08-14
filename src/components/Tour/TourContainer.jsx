@@ -14,6 +14,7 @@ import CardTour from "./CardTour";
 //   ssr: false,
 // });
 function TourContainer({ packages }) {
+  console.log(packages);
   return (
     <div className="">
       <Swiper
@@ -37,7 +38,13 @@ function TourContainer({ packages }) {
       >
         {packages?.map((tour) => (
           <SwiperSlide key={tour.id}>
-            <CardTour id={tour.id} imgSrc={tour?.image?.image_url} />
+            <CardTour
+              id={tour.id}
+              imgSrc={tour?.image?.image_url}
+              title={tour?.title?.substring(0, 50)}
+              price={tour?.start_price}
+              slug={tour?.slug}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
