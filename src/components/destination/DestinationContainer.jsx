@@ -34,7 +34,7 @@ function DestinationContainer({ destinations }) {
           <SwiperSlide key={destination?.id}>
             <CardDestination
               imgSrc={destination.image?.image_url}
-              country={"Egypt"}
+              country={destination?.title}
             />
           </SwiperSlide>
         ))}

@@ -41,13 +41,13 @@ function CardDestination({ imgSrc, country }) {
               <div className="flex items-center gap-1 rounded-2xl bg-[#667ac533] py-3 px-7 ">
                 <GiMeal className="text-[#00229E] text-lg" />
                 <span className="text-[16px] text-[#00229E] font-sans font-normal capitalize">
-                  36°C°F
+                  Sharqi Food
                 </span>
               </div>
             </div>
             <p className=" text-[16px] text-[#4E5255] font-normal text-justify font-sans capitalize ">
               Egypt, a country linking northeast Africa with the Middle East,
-              dates to the time of the pharaohs.{" "}
+              dates to the time of the pharaohs.
             </p>
             <div className="z-10">
               <div className="py-2 px-6 cursor-pointer bg-transparent border-[3px] border-[#fff]  transition-all group-hover:bg-[#00229E] group-hover:border-none rounded-3xl w-fit ">

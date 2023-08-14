@@ -29,7 +29,7 @@ export default function Home({ packages, destinations }) {
       <HeaderVideo />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
-      <RowOffers />
+      <RowOffers packages={packages} />
       <RowGuides />
       <RequestQuote />
       <Trustus />

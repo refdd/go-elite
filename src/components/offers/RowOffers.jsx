@@ -1,7 +1,7 @@
 import React from "react";
 import OffersContainer from "./OffersContainer";
 
-function RowOffers() {
+function RowOffers({ packages }) {
   return (
     <div className="bg-[#00145F]">
       <div className="container mx-auto px-4 mt-10">
@@ -9,7 +9,7 @@ function RowOffers() {
           <p className="text-2xl text-white font-bold font-sans capitalize">
             offers
           </p>
-          <OffersContainer />
+          <OffersContainer packages={packages} />
         </div>
       </div>
     </div>

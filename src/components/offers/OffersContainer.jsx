@@ -5,9 +5,10 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import CardOffer from "./CardOffer";
 import image1 from "../../../public/assets/image/tourimage (1).webp";
-function OffersContainer() {
+function OffersContainer({ packages }) {
+  console.log(packages);
   return (
-    <div className="mt-5 md:mx-44">
+    <div className="mt-5 md:pb-3 md:mx-44">
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -31,15 +32,16 @@ function OffersContainer() {
         modules={[Pagination]}
         className="offers-container "
       >
-        <SwiperSlide>
-          <CardOffer imgSrc={image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardOffer imgSrc={image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardOffer imgSrc={image1} />
-        </SwiperSlide>
+        {packages?.map((tour) => (
+          <SwiperSlide key={tour?.id}>
+            <CardOffer
+              imgSrc={tour?.image?.image_url}
+              title={tour?.title}
+              price={tour?.start_price}
+              slug={tour?.slug}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
