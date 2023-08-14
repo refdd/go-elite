@@ -16,7 +16,10 @@ function CardDestination({ imgSrc, country }) {
               src={imgSrc}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={true}
+              loading="lazy"
+              quality={60}
+              placeholder="blur"
+              blurDataURL={imgSrc}
               className="rounded-2xl object-cover"
             />
             <div className="absolute top-[70%] left-[10%] -translate-x-0 -translate-y-1/2 group-hover:hidden">

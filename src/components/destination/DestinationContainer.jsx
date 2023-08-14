@@ -7,7 +7,8 @@ import image1 from "../../../public/assets/image/tourimage (1).webp";
 import image2 from "../../../public/assets/image/tourimage (2).webp";
 import image3 from "../../../public/assets/image/tourimage (1).webp";
 import image4 from "../../../public/assets/image/tourimage (4).webp";
-function DestinationContainer() {
+function DestinationContainer({ destinations }) {
+  console.log(destinations);
   return (
     <div className="">
       <Swiper
@@ -29,18 +30,14 @@ function DestinationContainer() {
           },
         }}
       >
-        <SwiperSlide>
-          <CardDestination imgSrc={image2} country={"Egypt"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardDestination imgSrc={image4} country={"Cairo Nile Cruises"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardDestination imgSrc={image2} country={"Morocco"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardDestination imgSrc={image1} country={"Jordan"} />
-        </SwiperSlide>
+        {destinations?.map((destination) => (
+          <SwiperSlide key={destination?.id}>
+            <CardDestination
+              imgSrc={destination.image?.image_url}
+              country={"Egypt"}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

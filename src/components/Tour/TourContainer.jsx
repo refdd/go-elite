@@ -14,7 +14,6 @@ import CardTour from "./CardTour";
 //   ssr: false,
 // });
 function TourContainer({ packages }) {
-  console.log(packages);
   return (
     <div className="">
       <Swiper

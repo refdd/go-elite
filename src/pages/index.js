@@ -15,7 +15,8 @@ import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ packages }) {
+export default function Home({ packages, destinations }) {
+  console.log(destinations);
   return (
     <div>
       <Head>
@@ -27,7 +28,7 @@ export default function Home({ packages }) {
       <NavBar />
       <HeaderVideo />
       <RowTour packages={packages} />
-      <RowDestination />
+      <RowDestination destinations={destinations} />
       <RowOffers />
       <RowGuides />
       <RequestQuote />
@@ -41,9 +42,13 @@ export async function getStaticProps() {
   const packages = await fetchApi(
     `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active`
   );
+  const destinations = await fetchApi(
+    `${baseUrl}/destinations?tenant_id=9&language_id=5&status=active`
+  );
   return {
     props: {
       packages: packages.rows,
+      destinations: destinations.rows,
     },
     revalidate: 10,
   };
