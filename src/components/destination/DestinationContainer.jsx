@@ -8,7 +8,6 @@ import image2 from "../../../public/assets/image/tourimage (2).webp";
 import image3 from "../../../public/assets/image/tourimage (1).webp";
 import image4 from "../../../public/assets/image/tourimage (4).webp";
 function DestinationContainer({ destinations }) {
-  console.log(destinations);
   return (
     <div className="">
       <Swiper

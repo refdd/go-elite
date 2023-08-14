@@ -27,7 +27,7 @@ const questions = [
   },
 ];
 
-function AccordionFAQ() {
+function AccordionFAQ({ faqs }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const handleClick = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -35,7 +35,7 @@ function AccordionFAQ() {
   return (
     <div className="mt-5">
       <div className="">
-        {questions?.map((q, index) => (
+        {faqs?.map((q, index) => (
           <div
             key={q.id}
             className=" border mb-8  shadow-lg py-5 px-3 rounded-lg border-r-[4px] border-b-[4px] border-r-[#00229E] border-b-[#00229E] "
@@ -45,7 +45,7 @@ function AccordionFAQ() {
               onClick={() => handleClick(index)}
             >
               <h2 className=" text-textColor text-[15px] md:text-lg font-medium font-sans capitalize">
-                {q.question}
+                {q.title}
               </h2>
               <div className="w-[20%] md:w-[10%] flex items-center justify-center">
                 <LiaAngleDownSolid
@@ -54,7 +54,12 @@ function AccordionFAQ() {
               </div>
             </button>
             {activeIndex === index && (
-              <p className="mt-4 text-base text-gray-500">{q.answer}</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: q.body,
+                }}
+                className="mt-4 text-base text-gray-500"
+              ></div>
             )}
           </div>
         ))}

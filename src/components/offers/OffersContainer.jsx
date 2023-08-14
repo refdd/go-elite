@@ -6,7 +6,6 @@ import { Pagination } from "swiper/modules";
 import CardOffer from "./CardOffer";
 import image1 from "../../../public/assets/image/tourimage (1).webp";
 function OffersContainer({ packages }) {
-  console.log(packages);
   return (
     <div className="mt-5 md:pb-3 md:mx-44">
       <Swiper
