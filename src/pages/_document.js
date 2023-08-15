@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <Script
+          id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
