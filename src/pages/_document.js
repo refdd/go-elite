@@ -1,10 +1,12 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <script
+        <Script
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -19,7 +21,7 @@ export default function Document() {
       <body>
         <noscript>
           <iframe
-            src={`https://www.googletagmanager.com/ns.html?id='GTM-P7GBDH9`}
+            src={`https://www.googletagmanager.com/ns.html?id=GTM-P7GBDH9`}
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
