@@ -1,8 +1,23 @@
+import FAQs from "@/components/FAQs/FAQs";
+import Footer from "@/components/Footer/Footer";
+import From from "@/components/From/From";
 import NavBar from "@/components/nav/NavBar";
+import HeaderSingleTour from "@/components/singelTour/HeaderSingleTour";
+import Itinerary from "@/components/singelTour/Itinerary";
+import LeaveReview from "@/components/singelTour/LeaveReview";
+import Overview from "@/components/singelTour/Overview";
+import PricesAccommodation from "@/components/singelTour/PricesAccommodation";
+import SingleTaps from "@/components/singelTour/SingleTaps";
+import TripInformation from "@/components/singelTour/TripInformation";
 import Head from "next/head";
 import React from "react";
 
 function Singeltour() {
+  const [tapsValue, setTapsValue] = React.useState(0);
+
+  const handleChangeTaps = (event, newValue) => {
+    setTapsValue(newValue);
+  };
   return (
     <div>
       <Head>
@@ -12,6 +27,24 @@ function Singeltour() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
+      <HeaderSingleTour />
+      <SingleTaps value={tapsValue} handleChange={handleChangeTaps} />
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="md:col-span-2">
+            {tapsValue == 0 && <Overview />}
+            {tapsValue == 1 && <Itinerary />}
+            {tapsValue == 2 && <PricesAccommodation />}
+            {tapsValue == 3 && <TripInformation />}
+            <LeaveReview />
+          </div>
+          <div className="md:col-span-1">
+            <From />
+          </div>
+        </div>
+      </div>
+      <FAQs />
+      <Footer />
     </div>
   );
 }

@@ -8,8 +8,10 @@ import ListTourContainer from "@/components/listTour/ListTourContainer";
 import NavBar from "@/components/nav/NavBar";
 import Head from "next/head";
 import React from "react";
+import { baseUrl, fetchApi } from "../../../utils/featchApi";
 
-function index() {
+function index({ packages }) {
+  console.log(packages);
   return (
     <div>
       <Head>
@@ -23,9 +25,8 @@ function index() {
       <FilterContainer />
       <div className="container mx-auto px-4    mt-10 grid grid-cols-1 gap-10 md:grid-cols-7">
         <div className="md:col-span-4">
-          <ListTourContainer />
+          <ListTourContainer packages={packages} />
         </div>
-
         <div className="md:col-span-3">
           <From />
         </div>
@@ -38,3 +39,15 @@ function index() {
 }
 
 export default index;
+export async function getStaticProps() {
+  const packages = await fetchApi(
+    `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active`
+  );
+
+  return {
+    props: {
+      packages: packages.rows,
+    },
+    revalidate: 10,
+  };
+}
