@@ -13,6 +13,7 @@ function TapsItinerary() {
       <ul className="flex flex-col gap-3 md:flex-row ">
         {days?.map((day, i) => (
           <li
+            key={i}
             onClick={() => handleClick(i)}
             className={`border py-3 px-6  border-[#70735D] cursor-pointer ${
               activeIndex == i ? "bg-[#00229E]" : "bg-white"
