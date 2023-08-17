@@ -2,7 +2,7 @@ import { Divider } from "@mui/material";
 import React from "react";
 import { MdBedroomParent, MdMeetingRoom } from "react-icons/md";
 
-function PricesAccommodation() {
+function PricesAccommodation({ accommodations }) {
   return (
     <div>
       <div className="mt-10">
@@ -25,78 +25,59 @@ function PricesAccommodation() {
             </div>
           </div>
           {/* content */}
-          <div className="col-span-2">
-            <div className="flex flex-col justify-center items-center h-full">
-              <p className="text-[#3D3D3D] font-bold text-lg">May - Sep</p>
-              <p className="text-[#7A7A7A]  text-xs">Per Person</p>
-            </div>
-          </div>
-          <div className="col-span-2">
-            <div className="py-5 px-3 border-x">
-              <div className="flex flex-col gap-3">
-                <p className="text-[#3D3D3D] font-bold text-lg">
-                  Four Seasons Hotel First Residence
-                </p>
-                <div className=" flex items-center gap-1">
-                  <MdBedroomParent className="text-lg text-[#00229E]" />
-                  <span>Deluxe Room</span>
+          {accommodations?.map((accommodation) => (
+            <div key={accommodation?.id} className="col-span-5">
+              <div className="grid grid-cols-5 gap-0 divide-y">
+                <div className="col-span-2">
+                  {accommodation?.prices?.map((price, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-col justify-center items-center h-full"
+                    >
+                      <p className="text-[#3D3D3D] font-bold text-lg text-center">
+                        {price.name}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-[#3D3D3D] font-bold text-lg">
-                  Sofitel Old Cataract Aswan
-                </p>
-                <div className=" flex items-center gap-1">
-                  <MdMeetingRoom className="text-lg text-[#00229E]" />
-                  <span>Deluxe Room</span>
+                {/* hotels */}
+                <div className="col-span-2">
+                  <div className="py-5 px-3 border-x">
+                    <div className="flex flex-col gap-3">
+                      {accommodation?.hotels?.map((hotel) => (
+                        <div key={hotel.id} className="flex flex-col gap-3">
+                          <p className="text-[#3D3D3D] font-bold text-lg">
+                            {hotel.title}
+                          </p>
+                          <div className=" flex items-center gap-1">
+                            <MdBedroomParent className="text-lg text-[#00229E]" />
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: hotel.body,
+                              }}
+                              className=""
+                            ></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className=" flex items-center gap-1">
-                  <MdMeetingRoom className="text-lg text-[#00229E]" />
-                  <span>Deluxe Room</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-1">
-            {" "}
-            <div className="flex flex-col justify-center items-center h-full">
-              <p className="text-[#3D3D3D] font-bold text-4xl">$749</p>
-            </div>
-          </div>
-          <div className="col-span-2">
-            <div className="flex flex-col justify-center items-center h-full">
-              <p className="text-[#3D3D3D] font-bold text-lg">May - Sep</p>
-              <p className="text-[#7A7A7A]  text-xs">Per Person</p>
-            </div>
-          </div>
-          <div className="col-span-2">
-            <div className="py-5 px-3 border-x">
-              <div className="flex flex-col gap-3">
-                <p className="text-[#3D3D3D] font-bold text-lg">
-                  Four Seasons Hotel First Residence
-                </p>
-                <div className=" flex items-center gap-1">
-                  <MdBedroomParent className="text-lg text-[#00229E]" />
-                  <span>Deluxe Room</span>
-                </div>
-                <p className="text-[#3D3D3D] font-bold text-lg">
-                  Sofitel Old Cataract Aswan
-                </p>
-                <div className=" flex items-center gap-1">
-                  <MdMeetingRoom className="text-lg text-[#00229E]" />
-                  <span>Deluxe Room</span>
-                </div>
-                <div className=" flex items-center gap-1">
-                  <MdMeetingRoom className="text-lg text-[#00229E]" />
-                  <span>Deluxe Room</span>
+                <div className="col-span-1">
+                  {" "}
+                  <div className="flex flex-col justify-center items-center h-full">
+                    {accommodation?.prices?.map((price, i) => (
+                      <div key={i} className="">
+                        <p className="text-[#3D3D3D] font-bold text-4xl">
+                          {price?.items[0]?.price_value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-span-1">
-            {" "}
-            <div className="flex flex-col justify-center items-center h-full">
-              <p className="text-[#3D3D3D] font-bold text-4xl">$749</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,33 +1,6 @@
 import React, { useState } from "react";
 import { MdArrowDropDownCircle } from "react-icons/md";
-const days = [
-  {
-    id: 1,
-    question: "Can I travel safely with confidence to the middle east?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eius nulla eveniet ad, adipisci dignissimos dolores, vel architecto rerum iusto optio laudantium cum quia quae explicabo dolor atque. Facere, temporibus?",
-  },
-  {
-    id: 2,
-    question: "Can I travel safely with confidence to the middle east?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eius nulla eveniet ad, adipisci dignissimos dolores, vel architecto rerum iusto optio laudantium cum quia quae explicabo dolor atque. Facere, temporibus?",
-  },
-  {
-    id: 3,
-    question: "Can I travel safely with confidence to the middle east?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eius nulla eveniet ad, adipisci dignissimos dolores, vel architecto rerum iusto optio laudantium cum quia quae explicabo dolor atque. Facere, temporibus?",
-  },
-  {
-    id: 4,
-    question: "Can I travel safely with confidence to the middle east?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eius nulla eveniet ad, adipisci dignissimos dolores, vel architecto rerum iusto optio laudantium cum quia quae explicabo dolor atque. Facere, temporibus?",
-  },
-];
-
-function ItineraryDays() {
+function ItineraryDays({ itineraries }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const handleClick = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -40,7 +13,7 @@ function ItineraryDays() {
       </div>
       <div className=" mt-5">
         <div className="">
-          {days?.map((q, index) => (
+          {itineraries?.map((q, index) => (
             <div
               key={q.id}
               className=" border border-[#DDD] mb-8 py-5 px-3 rounded-lg  "
@@ -54,7 +27,7 @@ function ItineraryDays() {
                     <span className="text-[#fff] font-medium">{index + 1}</span>
                   </div>
                   <h2 className=" text-textColor text-[15px] md:text-lg font-medium font-sans capitalize">
-                    {q.question}
+                    {q.title}
                   </h2>
                 </div>
                 <div className="w-[20%] md:w-[10%] flex items-center justify-center">
@@ -68,7 +41,7 @@ function ItineraryDays() {
               {activeIndex === index && (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: q.answer,
+                    __html: q.body,
                   }}
                   className="mt-4 text-base text-gray-500"
                 ></div>

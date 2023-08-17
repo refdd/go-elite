@@ -2,20 +2,17 @@ import React from "react";
 import Included from "./Included";
 import Excluded from "./Excluded";
 
-function Overview() {
+function Overview({ desc, inclusion, exclusion }) {
   return (
     <div className="">
       <div className="flex flex-col gap-5">
         <div className="">
-          <p className="text-lg font-medium text-[#3D3D3D] capitalize text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-          </p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: desc,
+            }}
+            className="text-lg font-medium text-[#3D3D3D] capitalize text-justify"
+          ></div>
         </div>
         <div className="">
           <div className="w-full h-full ">
@@ -29,8 +26,8 @@ function Overview() {
           </div>
         </div>
       </div>
-      <Included />
-      <Excluded />
+      <Included inclusion={inclusion} />
+      <Excluded exclusion={exclusion} />
     </div>
   );
 }

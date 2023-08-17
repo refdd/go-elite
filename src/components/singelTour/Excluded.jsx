@@ -1,11 +1,11 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-function Excluded() {
+function Excluded({ exclusion }) {
   return (
     <div className="mt-5">
       <p className="text-xl text-[#3D3D3D] font-bold">Included:</p>
-      <ul className=" mt-3 flex flex-col gap-4">
+      {/* <ul className=" mt-3 flex flex-col gap-4">
         <li className="flex items-center gap-2">
           <AiOutlineClose className="text-[#FF5449] text-2xl" />
           <p className="text-base font-bold text-[#3D3D3D]">
@@ -50,7 +50,13 @@ function Excluded() {
             Accommodation in Luxor for 1 night, including daily breakfast.
           </p>
         </li>
-      </ul>
+      </ul> */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: exclusion,
+        }}
+        className=" mt-3 flex flex-col gap-4"
+      ></div>
     </div>
   );
 }

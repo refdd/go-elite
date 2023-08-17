@@ -3,7 +3,7 @@ import { GiMeal } from "react-icons/gi";
 import TapsItinerary from "./TapsItinerary";
 import ItineraryDays from "./ItineraryDays";
 
-function Itinerary() {
+function Itinerary({ itineraries }) {
   return (
     <div>
       <div className="flex flex-col gap-5 mt-5">
@@ -20,7 +20,7 @@ function Itinerary() {
       </div>
       <div className=" flex flex-col gap-4">
         <TapsItinerary />
-        <ItineraryDays />
+        <ItineraryDays itineraries={itineraries} />
       </div>
     </div>
   );
