@@ -11,9 +11,16 @@ import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export default function Home({ packages, destinations, wikis, faqs }) {
-  // console.log(faqs[0]);
+  const [isloding, setIsloding] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsloding(true);
+    }, 1000);
+  }, []);
   return (
     <div>
       <Head>
@@ -22,16 +29,30 @@ export default function Home({ packages, destinations, wikis, faqs }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-P7GBDH9" />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'GTM-P7GBDH9');
-        `}
-      </Script>
+      {isloding && (
+        <Script
+          onLoad={() => {
+            console.log("Script has loaded");
+          }}
+          src="https://www.googletagmanager.com/gtag/js?id=GTM-P7GBDH9"
+        />
+      )}
+      {isloding && (
+        <Script
+          onLoad={() => {
+            console.log("Script has loaded");
+          }}
+          id="google-analytics"
+        >
+          {`
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+    
+             gtag('config', 'GTM-P7GBDH9');
+           `}
+        </Script>
+      )}
       <NavBar />
       <HeaderVideo />
       <RowTour packages={packages} />
