@@ -19,7 +19,7 @@ export default function Home({ packages, destinations, wikis, faqs }) {
   useEffect(() => {
     setTimeout(() => {
       setIsloding(true);
-    }, 1000);
+    }, 5000);
   }, []);
   return (
     <div>
