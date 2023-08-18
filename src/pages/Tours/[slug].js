@@ -33,6 +33,7 @@ function Singeltour({ singletour, faqs }) {
     accommodations,
     TripInformation,
   } = singletour;
+  console.log(accommodations);
   return (
     <div>
       <Head>

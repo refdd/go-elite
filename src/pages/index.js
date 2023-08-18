@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import NavBar from "@/components/nav/NavBar";
 import HeaderVideo from "@/components/header/HeaderVideo";
 import RowTour from "@/components/Tour/RowTour ";
@@ -9,14 +7,13 @@ import Head from "next/head";
 import RowGuides from "@/components/guides/RowGuides";
 import RequestQuote from "@/components/RequestQuote/RequestQuote";
 import Trustus from "@/components/Trustus/Trustus";
-import image1 from "../../public/assets/image/tourimage (1).webp";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
-const inter = Inter({ subsets: ["latin"] });
+import Script from "next/script";
 
 export default function Home({ packages, destinations, wikis, faqs }) {
-  console.log(faqs[0]);
+  // console.log(faqs[0]);
   return (
     <div>
       <Head>
@@ -25,14 +22,24 @@ export default function Home({ packages, destinations, wikis, faqs }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-P7GBDH9" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'GTM-P7GBDH9');
+        `}
+      </Script>
       <NavBar />
       <HeaderVideo />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
-      <RowOffers packages={packages} />
+      {/* <RowOffers packages={packages} /> */}
       <RowGuides wikis={wikis} />
-      <RequestQuote />
-      <Trustus />
+      {/* <RequestQuote /> */}
+      {/* <Trustus /> */}
       <FAQs faqs={faqs} />
       <Footer />
     </div>
