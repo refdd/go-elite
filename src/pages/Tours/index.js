@@ -11,7 +11,7 @@ import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 
 function index({ packages }) {
-  console.log(packages);
+  // console.log(packages);
   return (
     <div>
       <Head>

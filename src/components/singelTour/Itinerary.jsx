@@ -19,7 +19,7 @@ function Itinerary({ itineraries }) {
         </div>
       </div>
       <div className=" flex flex-col gap-4">
-        <TapsItinerary />
+        {/* <TapsItinerary /> */}
         <ItineraryDays itineraries={itineraries} />
       </div>
     </div>
