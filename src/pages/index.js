@@ -12,6 +12,7 @@ import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import Reviews from "@/components/Reviews/Reviews";
 
 export default function Home({ packages, destinations, wikis, faqs }) {
   const [isloding, setIsloding] = useState(false);
@@ -59,6 +60,7 @@ export default function Home({ packages, destinations, wikis, faqs }) {
       <RowDestination destinations={destinations} />
       {/* <RowOffers packages={packages} /> */}
       <RowGuides wikis={wikis} />
+      <Reviews />
       {/* <RequestQuote /> */}
       {/* <Trustus /> */}
       <FAQs faqs={faqs} />
