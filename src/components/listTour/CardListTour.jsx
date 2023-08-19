@@ -21,13 +21,14 @@ function CardListTour({
             <div className="relative w-full h-[213px] md:h-full">
               <Image
                 alt="tourImage"
-                src={imgSrc}
                 fill
+                src={imgSrc}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
                 quality={60}
                 placeholder="blur"
                 blurDataURL={imgSrc}
+                priority={false}
                 className="rounded-2xl object-cover md:rounded-l-2xl md:rounded-r-none"
               />
             </div>
