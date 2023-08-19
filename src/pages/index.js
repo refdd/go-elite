@@ -40,7 +40,7 @@ export default function Home({ packages, destinations, wikis, faqs }) {
       {isloding && (
         <Script
           onLoad={() => {
-            console.log("Script has loaded");
+            console.log("Script has ");
           }}
           id="google-analytics"
         >
