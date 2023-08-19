@@ -2,11 +2,8 @@ import NavBar from "@/components/nav/NavBar";
 import HeaderVideo from "@/components/header/HeaderVideo";
 import RowTour from "@/components/Tour/RowTour ";
 import RowDestination from "@/components/destination/RowDestination";
-import RowOffers from "@/components/offers/RowOffers";
 import Head from "next/head";
 import RowGuides from "@/components/guides/RowGuides";
-import RequestQuote from "@/components/RequestQuote/RequestQuote";
-import Trustus from "@/components/Trustus/Trustus";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
@@ -32,6 +29,7 @@ export default function Home({ packages, destinations, wikis, faqs }) {
       </Head>
       {isloding && (
         <Script
+          strategy="worker"
           onLoad={() => {
             console.log("Script has loaded");
           }}

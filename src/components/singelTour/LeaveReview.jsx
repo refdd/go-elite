@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import CustomTextField from "../header/CustomTextField";
 import { FormProvider, useForm } from "react-hook-form";
-import {
-  Button,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  InputLabel,
-  Radio,
-  RadioGroup,
-  Rating,
-  Typography,
-} from "@mui/material";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
+import InputLabel from "@mui/material/InputLabel";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 
 function LeaveReview() {
   const methods = useForm();

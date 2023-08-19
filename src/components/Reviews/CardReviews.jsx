@@ -1,4 +1,4 @@
-import { Rating } from "@mui/material";
+import Rating from "@mui/material/Rating";
 import Image from "next/image";
 import React, { useState } from "react";
 

@@ -11,7 +11,7 @@ import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 
 function index({ packages }) {
-  // console.log(packages);
+  console.log(packages);
   return (
     <div>
       <Head>
@@ -22,7 +22,7 @@ function index({ packages }) {
       </Head>
       <NavBar />
       <MainHead />
-      {/* <FilterContainer /> */}
+      <FilterContainer />
       <div className="container mx-auto px-4    mt-10 grid grid-cols-1 gap-10 md:grid-cols-7">
         <div className="md:col-span-4">
           <ListTourContainer packages={packages} />

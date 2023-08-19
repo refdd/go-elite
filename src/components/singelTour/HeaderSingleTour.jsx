@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import bg from "../../../public/assets/image/singleHeader.webp";
+import React from "react";
 import { LiaCalendarAltSolid } from "react-icons/lia";
 import { FaLocationArrow } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
 import SingelGallery from "./SingelGallery";
-import { Modal } from "@mui/material";
+import Modal from "@mui/material/Modal";
 function HeaderSingleTour({ image, title, Duration, reating, galleries }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);

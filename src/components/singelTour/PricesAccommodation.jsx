@@ -1,6 +1,5 @@
-import { Divider } from "@mui/material";
 import React from "react";
-import { MdBedroomParent, MdMeetingRoom } from "react-icons/md";
+import { MdBedroomParent } from "react-icons/md";
 
 function PricesAccommodation({ accommodations }) {
   return (
