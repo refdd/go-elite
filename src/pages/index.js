@@ -1,5 +1,4 @@
 import NavBar from "@/components/nav/NavBar";
-import HeaderVideo from "@/components/header/HeaderVideo";
 import RowTour from "@/components/Tour/RowTour ";
 import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
@@ -7,11 +6,17 @@ import RowGuides from "@/components/guides/RowGuides";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
-import Script from "next/script";
-import { useEffect, useState } from "react";
 import Reviews from "@/components/Reviews/Reviews";
-import SliderHeader from "@/components/SliderHeader/SliderHeader";
-
+import dynamic from "next/dynamic";
+const DynamicSliderHeader = dynamic(
+  () => import("@/components/SliderHeader/SliderHeader"),
+  {
+    loading: () => (
+      <div className=" w-full h-[230px]  md:h-[530px] bg-white"></div>
+    ),
+    ssr: false, // Disable server-side rendering for this component
+  }
+);
 export default function Home({
   packages,
   destinations,
@@ -22,14 +27,13 @@ export default function Home({
   sliders,
   logo,
 }) {
-  const [isloding, setIsloding] = useState(false);
+  // const [isloding, setIsloding] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsloding(true);
-    }, 10000);
-  }, []);
-  console.log(logo);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsloding(true);
+  //   }, 10000);
+  // }, []);
   return (
     <div>
       <Head>
@@ -38,7 +42,7 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isloding && (
+      {/* {isloding && (
         <Script
           strategy="lazyOnload"
           onLoad={() => {
@@ -63,10 +67,10 @@ export default function Home({
              gtag('config', 'GTM-P7GBDH9');
            `}
         </Script>
-      )}
+      )} */}
       <NavBar menus={menus} logo={logo} />
       {/* <HeaderVideo /> */}
-      <SliderHeader sliders={sliders} />
+      <DynamicSliderHeader sliders={sliders} />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />
