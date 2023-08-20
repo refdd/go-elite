@@ -1,5 +1,4 @@
 import NavBar from "@/components/nav/NavBar";
-import HeaderVideo from "@/components/header/HeaderVideo";
 import RowTour from "@/components/Tour/RowTour ";
 import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
@@ -9,7 +8,6 @@ import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Reviews from "@/components/Reviews/Reviews";
 import SliderHeader from "@/components/SliderHeader/SliderHeader";
-
 export default function Home({
   packages,
   destinations,
