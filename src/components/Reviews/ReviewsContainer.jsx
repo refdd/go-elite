@@ -6,7 +6,8 @@ import { Pagination } from "swiper/modules";
 import image1 from "../../../public/assets/image/tourimage (2).webp";
 import CardReviews from "./CardReviews";
 
-function ReviewsContainer() {
+function ReviewsContainer({ allReviews }) {
+  console.log(allReviews[0]);
   return (
     <div className=" mt-5">
       <Swiper
@@ -32,18 +33,18 @@ function ReviewsContainer() {
         modules={[Pagination]}
         className="guide-container"
       >
-        <SwiperSlide>
-          {" "}
-          <CardReviews imgSrc={image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <CardReviews imgSrc={image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <CardReviews imgSrc={image1} />
-        </SwiperSlide>
+        {allReviews?.map((item) => (
+          <SwiperSlide key={item.id}>
+            {" "}
+            <CardReviews
+              imgSrc={item?.image?.image_url}
+              title={item?.title}
+              name={item?.name}
+              palce={item?.place}
+              stars={item?.stars}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

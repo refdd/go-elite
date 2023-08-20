@@ -11,7 +11,13 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import Reviews from "@/components/Reviews/Reviews";
 
-export default function Home({ packages, destinations, wikis, faqs }) {
+export default function Home({
+  packages,
+  destinations,
+  wikis,
+  faqs,
+  allReviews,
+}) {
   const [isloding, setIsloding] = useState(false);
 
   useEffect(() => {
@@ -58,7 +64,7 @@ export default function Home({ packages, destinations, wikis, faqs }) {
       <RowDestination destinations={destinations} />
       {/* <RowOffers packages={packages} /> */}
       <RowGuides wikis={wikis} />
-      <Reviews />
+      <Reviews allReviews={allReviews} />
       {/* <RequestQuote /> */}
       {/* <Trustus /> */}
       <FAQs faqs={faqs} />
@@ -79,12 +85,16 @@ export async function getStaticProps() {
   const faqs = await fetchApi(
     `${baseUrl}/faqs?tenant_id=9&language_id=5&viewInHome=1&status=active&paginate=5`
   );
+  const allReviews = await fetchApi(
+    `${baseUrl}/reviews?tenant_id=9&language_id=5`
+  );
   return {
     props: {
       packages: packages.rows,
       destinations: destinations.rows,
       wikis: wikis.rows,
       faqs: faqs.rows,
+      allReviews: allReviews.rows,
     },
     revalidate: 10,
   };

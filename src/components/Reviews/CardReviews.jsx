@@ -2,8 +2,8 @@ import Rating from "@mui/material/Rating";
 import Image from "next/image";
 import React, { useState } from "react";
 
-function CardReviews({ imgSrc }) {
-  const [value, setValue] = useState(5);
+function CardReviews({ imgSrc, title, name, palce, stars }) {
+  const [value, setValue] = useState(stars);
 
   return (
     <div className="relative pt-8">
@@ -17,7 +17,7 @@ function CardReviews({ imgSrc }) {
             loading="lazy"
             quality={60}
             placeholder="blur"
-            // blurDataURL={imgSrc}
+            blurDataURL={imgSrc}
             className="rounded-full object-cover "
           />
         </div>
@@ -27,17 +27,15 @@ function CardReviews({ imgSrc }) {
           <div className="flex items-center justify-between">
             <div className="flex flex-col  ">
               <p className="text-[#3d3d3d] text-base md:text-lg font-bold ">
-                Brenda Posada
+                {name}
               </p>
-              <p className="text-sm text-[#3d3d3d] ">San Francisco, CA</p>
+              <p className="text-sm text-[#3d3d3d] ">{palce}</p>
             </div>
             <div className="">
               <Rating name="read-only" value={value} readOnly />
             </div>
           </div>
-          <p className="text-lg text-[#3d3d3d]">
-            Fantastic and safe time with beyond excellent service
-          </p>
+          <p className="text-lg text-[#3d3d3d]">{title}</p>
         </div>
       </div>
     </div>
