@@ -10,7 +10,7 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 
-function index({ packages }) {
+function index({ packages, menus }) {
   // console.log(packages);
   return (
     <div>
@@ -20,7 +20,7 @@ function index({ packages }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <NavBar menus={menus} />
       <MainHead />
       <FilterContainer />
       <div className="container mx-auto px-4    mt-10 grid grid-cols-1 gap-10 md:grid-cols-7">
@@ -43,10 +43,12 @@ export async function getStaticProps() {
   const packages = await fetchApi(
     `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active`
   );
+  const menus = await fetchApi(`${baseUrl}/menus?tenant_id=9&language_id=5`);
 
   return {
     props: {
       packages: packages.rows,
+      menus: menus.rows,
     },
     revalidate: 10,
   };

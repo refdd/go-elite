@@ -17,6 +17,7 @@ export default function Home({
   wikis,
   faqs,
   allReviews,
+  menus,
 }) {
   const [isloding, setIsloding] = useState(false);
 
@@ -25,6 +26,7 @@ export default function Home({
       setIsloding(true);
     }, 10000);
   }, []);
+  console.log(menus);
   return (
     <div>
       <Head>
@@ -59,7 +61,7 @@ export default function Home({
            `}
         </Script>
       )}
-      <NavBar />
+      <NavBar menus={menus} />
       <HeaderVideo />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
@@ -72,7 +74,7 @@ export default function Home({
 }
 export async function getStaticProps() {
   const packages = await fetchApi(
-    `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active`
+    `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active&paginate=7`
   );
   const destinations = await fetchApi(
     `${baseUrl}/destinations?tenant_id=9&language_id=5&status=active`
@@ -86,6 +88,7 @@ export async function getStaticProps() {
   const allReviews = await fetchApi(
     `${baseUrl}/reviews?tenant_id=9&language_id=5`
   );
+  const menus = await fetchApi(`${baseUrl}/menus?tenant_id=9&language_id=5`);
   return {
     props: {
       packages: packages.rows,
@@ -93,7 +96,7 @@ export async function getStaticProps() {
       wikis: wikis.rows,
       faqs: faqs.rows,
       allReviews: allReviews.rows,
+      menus: menus.rows,
     },
-    revalidate: 10,
   };
 }

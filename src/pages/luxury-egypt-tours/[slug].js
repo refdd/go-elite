@@ -13,7 +13,7 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 
-function Singeltour({ singletour, faqs }) {
+function Singeltour({ singletour, faqs, menus }) {
   const [tapsValue, setTapsValue] = React.useState(0);
 
   const handleChangeTaps = (event, newValue) => {
@@ -33,7 +33,7 @@ function Singeltour({ singletour, faqs }) {
     accommodations,
     TripInformation,
   } = singletour;
-  console.log(accommodations);
+
   return (
     <div>
       <Head>
@@ -42,7 +42,7 @@ function Singeltour({ singletour, faqs }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <NavBar menus={menus} />
       <HeaderSingleTour
         image={image}
         title={title}
@@ -92,10 +92,12 @@ export async function getServerSideProps({ params }) {
   const faqs = await fetchApi(
     `${baseUrl}/faqs?tenant_id=9&language_id=5&viewInHome=1&status=active&paginate=5`
   );
+  const menus = await fetchApi(`${baseUrl}/menus?tenant_id=9&language_id=5`);
   return {
     props: {
       singletour: singletour.row,
       faqs: faqs.rows,
+      menus: menus.rows,
     }, // will be passed to the page component as props
   };
 }

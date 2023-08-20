@@ -35,7 +35,7 @@ function CardOffer({ imgSrc, title, price, slug }) {
               </p>
             </div>
             <div className="py-2 px-6 cursor-pointer bg-transparent border-[3px] border-[#fff]  transition-all  rounded-3xl w-fit ">
-              <Link href={`/Tours/${slug}`}>
+              <Link href={`/luxury-egypt-tours/${slug}`}>
                 <button className="text-[16px] text-white font-sans capitalize font-bold ">
                   see more
                 </button>

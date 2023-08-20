@@ -5,7 +5,7 @@ import MenuBar from "./MenuBar";
 import Link from "next/link";
 import ListMenu from "./ListMenu";
 import { AiOutlinePlus } from "react-icons/ai";
-function NavBar() {
+function NavBar({ menus }) {
   const [menuBar, setMenuBar] = useState(false);
 
   const handelMenubar = () => {
@@ -36,20 +36,13 @@ function NavBar() {
                   <span>Home</span>
                 </Link>
               </li>
-              <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-                <Link href={"/Tours"}>
-                  <span>Luxury egypt tours </span>
-                </Link>
-              </li>
-              <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-                <span>Destinations</span>
-              </li>
-              <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-                <span>About us</span>
-              </li>
-              <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-                <span>Blogs</span>
-              </li>
+              {menus?.map((menu) => (
+                <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
+                  <Link href={`${menu?.slug}`}>
+                    <span>{menu?.title}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
             <div className="py-2 px-6 cursor-pointer bg-[#00229E] transition-all hover:bg-[#00145F] rounded-3xl flex justify-center items-center gap-2 ">
               <AiOutlinePlus className="text-[#FFF]" />

@@ -64,7 +64,7 @@ function CardTour({
             </div>
             <div className="flex justify-end">
               <div className="py-3 px-9 rounded-md border-[1px] border-[#3d3d3d] cursor-pointer">
-                <Link href={`/Tours/${slug}`}>
+                <Link href={`/luxury-egypt-tours/${slug}`}>
                   <button className="text-[#3d3d3d] text-[16px] font-sans font-medium capitalize">
                     View Tour
                   </button>

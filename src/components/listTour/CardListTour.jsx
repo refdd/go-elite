@@ -17,7 +17,7 @@ function CardListTour({
     <div className="rounded-[32px] bg-white border-[0.5px] border-[#B4B8BB] my-5 md:hover:shadow-md md:hover:scale-[1.01] transition-all">
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 ">
         <div className="md:col-span-1">
-          <Link href={`/Tours/${slug}`}>
+          <Link href={`/luxury-egypt-tours/${slug}`}>
             <div className="relative w-full h-[213px] md:h-full">
               <Image
                 alt="tourImage"
@@ -37,7 +37,7 @@ function CardListTour({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2  md:gap-3 py-2 px-3 md:px-2 ">
             {/* titel */}
             <div className="md:col-span-2">
-              <Link href={`/Tours/${slug}`}>
+              <Link href={`/luxury-egypt-tours/${slug}`}>
                 <p className="text-lg font-sans text-[#4E5255] font-bold capitalize">
                   {title}
                 </p>
@@ -75,7 +75,7 @@ function CardListTour({
             </div>
             <div className="flex justify-end">
               <div className="py-3 px-9 rounded-3xl border-[3px] border-[#667ac533] cursor-pointer">
-                <Link href={`/Tours/${slug}`}>
+                <Link href={`/luxury-egypt-tours/${slug}`}>
                   <button className="text-[#00186F] text-[16px] font-sans font-medium capitalize">
                     View Tour
                   </button>
