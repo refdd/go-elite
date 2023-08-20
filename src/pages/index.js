@@ -47,6 +47,7 @@ export default function Home({
           onLoad={() => {
             console.log("Script has ");
           }}
+          strategy="lazyOnload"
           id="google-analytics"
         >
           {`

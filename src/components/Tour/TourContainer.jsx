@@ -2,17 +2,7 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-// import CardTour from "./CardTour";
-import imageTour1 from "../../../public/assets/image/tourimage (1).webp";
-import imageTour2 from "../../../public/assets/image/tourimage (2).webp";
-import imageTour3 from "../../../public/assets/image/tourimage (1).webp";
-import imageTour4 from "../../../public/assets/image/tourimage (4).webp";
-import dynamic from "next/dynamic";
 import CardTour from "./CardTour";
-// const PreloadableComponent = dynamic(() => import("./CardTour"), {
-//   loading: () => <div className="w-full h-[600px]">Loading...</div>,
-//   ssr: false,
-// });
 function TourContainer({ packages }) {
   return (
     <div className="">
@@ -30,7 +20,7 @@ function TourContainer({ packages }) {
             spaceBetween: 32,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 32,
           },
         }}
@@ -40,10 +30,12 @@ function TourContainer({ packages }) {
             <CardTour
               id={tour.id}
               imgSrc={tour?.image?.image_url}
-              title={tour?.title?.substring(0, 50)}
+              title={tour?.destination?.title}
               price={tour?.start_price}
               slug={tour?.slug}
-              description={tour?.short_body}
+              description={tour?.title?.substring(0, 50)}
+              stars={tour?.stars}
+              duration={tour?.duration}
             />
           </SwiperSlide>
         ))}
