@@ -10,6 +10,7 @@ import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import Reviews from "@/components/Reviews/Reviews";
+import SliderHeader from "@/components/SliderHeader/SliderHeader";
 
 export default function Home({
   packages,
@@ -18,6 +19,7 @@ export default function Home({
   faqs,
   allReviews,
   menus,
+  sliders,
 }) {
   const [isloding, setIsloding] = useState(false);
 
@@ -26,6 +28,7 @@ export default function Home({
       setIsloding(true);
     }, 10000);
   }, []);
+  console.log(sliders);
   return (
     <div>
       <Head>
@@ -62,6 +65,7 @@ export default function Home({
       )}
       <NavBar menus={menus} />
       {/* <HeaderVideo /> */}
+      <SliderHeader sliders={sliders} />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />
@@ -88,6 +92,9 @@ export async function getStaticProps() {
     `${baseUrl}/reviews?tenant_id=9&language_id=5`
   );
   const menus = await fetchApi(`${baseUrl}/menus?tenant_id=9&language_id=5`);
+  const sliders = await fetchApi(
+    `${baseUrl}/sliders?tenant_id=9&language_id=5&status=active`
+  );
   return {
     props: {
       packages: packages.rows,
@@ -96,6 +103,7 @@ export async function getStaticProps() {
       faqs: faqs.rows,
       allReviews: allReviews.rows,
       menus: menus.rows,
+      sliders: sliders.rows,
     },
   };
 }

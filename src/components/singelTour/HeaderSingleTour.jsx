@@ -16,7 +16,7 @@ function HeaderSingleTour({ image, title, Duration, reating, galleries }) {
         className=" relative overflow-hidden   w-full bg-no-repeat  bg-cover bg-center  h-[400px] md:h-[752px] "
       >
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-10 md:-translate-y-1/2 w-full">
-          <div className="container mx-auto px-4 ">
+          <div className="container mx-auto px-4 md:px-10 ">
             <div className="flex flex-col gap-7">
               <p className="text-2xl md:text-4xl font-bold text-white ">
                 {title}

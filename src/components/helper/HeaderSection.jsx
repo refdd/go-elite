@@ -3,7 +3,7 @@ import React from "react";
 function HeaderSection({ title, desc }) {
   return (
     <div>
-      <div className="flex flex-col gap-1 ">
+      <div className="flex flex-col gap-1 justify-center items-center ">
         <p className="text-lg text-[#3D3D3D] font-bold font-sans capitalize md:text-xl">
           {title}
         </p>

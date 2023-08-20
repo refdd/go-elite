@@ -40,7 +40,7 @@ function a11yProps(index) {
 
 function SingleTaps({ value, handleChange }) {
   return (
-    <div className=" container mx-auto  ">
+    <div className=" container mx-auto md:px-10  ">
       <Box
         sx={{
           maxWidth: "100%",

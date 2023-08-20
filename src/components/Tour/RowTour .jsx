@@ -4,10 +4,12 @@ import TourContainer from "./TourContainer";
 
 function RowTour({ packages }) {
   return (
-    <div className="container  mx-auto px-4 mt-10">
+    <div className="container  mx-auto px-4 mt-10 md:px-10">
       <HeaderSection
-        title={"Trip Colection"}
-        desc={"Find The Best Offer Sutits Your budget"}
+        title={"Luxury Adventure Made Just For You"}
+        desc={
+          "Live a unique experience, choosing the most comfortable vacation"
+        }
       />
       <TourContainer packages={packages} />
     </div>

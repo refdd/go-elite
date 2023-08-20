@@ -4,17 +4,15 @@ import logo from "../../../public/assets/image/logo.svg";
 import MenuBar from "./MenuBar";
 import Link from "next/link";
 import ListMenu from "./ListMenu";
-import { AiOutlinePlus } from "react-icons/ai";
 function NavBar({ menus }) {
   const [menuBar, setMenuBar] = useState(false);
 
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };
-  console.log(menus);
   return (
-    <div className="container mx-auto  px-4 md:px-0">
-      <div className="grid grid-cols-2 md:grid-cols-7 items-center  ">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-2 md:grid-cols-5  items-center  ">
         {/* logo  */}
         <div className="md:col-span-1">
           <div className=" relative w-[100%] h-[80px]">
@@ -29,9 +27,9 @@ function NavBar({ menus }) {
         </div>
         <MenuBar handelMenubar={handelMenubar} />
         {/* list nav */}
-        <div className="md:col-span-5  hidden md:block">
-          <div className=" flex items-center gap-10">
-            <ul className="flex items-center gap-7">
+        <div className="md:col-span-4  hidden md:block">
+          <div className=" flex items-center gap-10 md:items-center justify-end">
+            <ul className="flex items-center gap-3">
               <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
                 <Link href={"/"}>
                   <span>Home</span>
@@ -64,10 +62,9 @@ function NavBar({ menus }) {
                 </li>
               ))}
             </ul>
-            <div className="py-2 px-6 cursor-pointer bg-[#00229E] transition-all hover:bg-[#00145F] rounded-3xl flex justify-center items-center gap-2 ">
-              <AiOutlinePlus className="text-[#FFF]" />
+            <div className="py-2 px-6 w-[151px]  cursor-pointer bg-[#01a8c3] transition-all rounded-3xl flex justify-center items-center gap-2 ">
               <button className="text-[16px] text-white font-sans capitalize font-normal ">
-                custom Tour
+                Inquire
               </button>
             </div>
           </div>

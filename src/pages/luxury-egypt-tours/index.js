@@ -23,7 +23,7 @@ function index({ packages, menus }) {
       <NavBar menus={menus} />
       <MainHead />
       <FilterContainer />
-      <div className="container mx-auto px-4    mt-10 grid grid-cols-1 gap-10 md:grid-cols-7">
+      <div className="container mx-auto px-4 md:px-10    mt-10 grid grid-cols-1 gap-10 md:grid-cols-7">
         <div className="md:col-span-4">
           <ListTourContainer packages={packages} />
         </div>

@@ -21,3 +21,26 @@ body {
 .offers-container .swiper-pagination-bullet-active {
   background-color: #009b72 !important;
 }
+.swiper-button-prev {
+  display: none !important ;
+}
+.swiper-button-next {
+  display: none !important ;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #f5f5f5 !important;
+  font-size: 10px !important;
+  font-weight: 900;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 30px !important;
+}
+
+.myHeaderSlider:hover .swiper-button-prev {
+  display: flex !important;
+}
+.myHeaderSlider:hover .swiper-button-next {
+  display: flex !important;
+}
