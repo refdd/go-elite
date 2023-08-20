@@ -20,13 +20,6 @@ export default function Home({
   sliders,
   logo,
 }) {
-  // const [isloding, setIsloding] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsloding(true);
-  //   }, 10000);
-  // }, []);
   return (
     <div>
       <Head>
@@ -35,34 +28,7 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* {isloding && (
-        <Script
-          strategy="lazyOnload"
-          onLoad={() => {
-            console.log("Script has loaded");
-          }}
-          src="https://www.googletagmanager.com/gtag/js?id=GTM-P7GBDH9"
-        />
-      )}
-      {isloding && (
-        <Script
-          onLoad={() => {
-            console.log("Script has ");
-          }}
-          strategy="lazyOnload"
-          id="google-analytics"
-        >
-          {`
-             window.dataLayer = window.dataLayer || [];
-             function gtag(){dataLayer.push(arguments);}
-             gtag('js', new Date());
-    
-             gtag('config', 'GTM-P7GBDH9');
-           `}
-        </Script>
-      )} */}
       <NavBar menus={menus} logo={logo} />
-      {/* <HeaderVideo /> */}
       <SliderHeader sliders={sliders} />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />

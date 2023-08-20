@@ -1,10 +1,9 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../../../public/assets/image/logo.svg";
 import MenuBar from "./MenuBar";
 import Link from "next/link";
 import ListMenu from "./ListMenu";
-function NavBar({ menus }) {
+function NavBar({ menus, logo }) {
   const [menuBar, setMenuBar] = useState(false);
 
   const handelMenubar = () => {
@@ -16,13 +15,19 @@ function NavBar({ menus }) {
         {/* logo  */}
         <div className="md:col-span-1">
           <div className=" relative w-[100%] h-[80px]">
-            <Image
-              alt="logo"
-              src={logo}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={true}
-            />
+            <Link href={"/"}>
+              <Image
+                alt="logo"
+                src={logo?.image?.image_url}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={true}
+                quality={60}
+                placeholder="blur"
+                blurDataURL={logo?.image?.image_url}
+                className=" "
+              />
+            </Link>
           </div>
         </div>
         <MenuBar handelMenubar={handelMenubar} />
