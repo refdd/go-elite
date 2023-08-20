@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -7,7 +7,6 @@ import Image from "next/image";
 function SliderHeader({ sliders }) {
   return (
     <div>
-      {" "}
       <Swiper
         navigation={true}
         modules={[Navigation]}
@@ -21,7 +20,7 @@ function SliderHeader({ sliders }) {
                 src={slider?.image?.image_url}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                property
+                priority
                 quality={60}
                 placeholder="blur"
                 blurDataURL={slider?.image?.image_url}
