@@ -11,6 +11,7 @@ function NavBar({ menus }) {
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };
+  console.log(menus);
   return (
     <div className="container mx-auto  px-4 md:px-0">
       <div className="grid grid-cols-2 md:grid-cols-7 items-center  ">
@@ -37,13 +38,29 @@ function NavBar({ menus }) {
                 </Link>
               </li>
               {menus?.map((menu) => (
-                <li
-                  key={menu?.id}
-                  className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer"
-                >
-                  <Link href={`${menu?.slug}`}>
-                    <span>{menu?.title}</span>
-                  </Link>
+                <li key={menu?.id} className="relative group">
+                  <div className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
+                    <Link href={`${menu?.slug}`}>
+                      <span>{menu?.title}</span>
+                    </Link>
+                  </div>
+                  {menu?.subMenu && (
+                    <div className="absolute -bottom-[59px] left-1/2 -translate-x-1/2 -translate-y-0 w-40 hidden group-hover:block hover:block">
+                      <div className="flex flex-col gap-1 relative z-20 border-t-2 border-[#c2a36e]">
+                        {menu?.subMenu &&
+                          menu?.subMenu.map((link) => (
+                            <div
+                              key={link?.id}
+                              className=" relative z-20 text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer"
+                            >
+                              <Link href={`${link?.slug}`}>
+                                <span>{link?.title}</span>
+                              </Link>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

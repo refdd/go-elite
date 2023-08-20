@@ -26,7 +26,6 @@ export default function Home({
       setIsloding(true);
     }, 10000);
   }, []);
-  console.log(menus);
   return (
     <div>
       <Head>
@@ -62,7 +61,7 @@ export default function Home({
         </Script>
       )}
       <NavBar menus={menus} />
-      <HeaderVideo />
+      {/* <HeaderVideo /> */}
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />

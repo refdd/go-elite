@@ -7,7 +7,6 @@ import image1 from "../../../public/assets/image/tourimage (2).webp";
 import GuideCard from "./GuideCard";
 
 function GuideContainer({ wikis }) {
-  console.log(wikis[0]);
   return (
     <div className=" ">
       <Swiper

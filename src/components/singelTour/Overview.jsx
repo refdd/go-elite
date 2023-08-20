@@ -14,7 +14,7 @@ function Overview({ desc, inclusion, exclusion }) {
             className="text-lg font-medium text-[#3D3D3D] capitalize text-justify"
           ></div>
         </div>
-        <div className="">
+        {/* <div className="">
           <div className="w-full h-full ">
             <video
               className=" w-full h-[300px] md:h-[495px] object-cover rounded-3xl"
@@ -24,7 +24,7 @@ function Overview({ desc, inclusion, exclusion }) {
               muted
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <Included inclusion={inclusion} />
       <Excluded exclusion={exclusion} />
