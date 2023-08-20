@@ -21,6 +21,7 @@ function NavBar({ menus, logo }) {
                 src={logo?.image?.image_url}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={true}
                 quality={60}
                 placeholder="blur"
                 blurDataURL={logo?.image?.image_url}
