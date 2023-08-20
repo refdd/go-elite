@@ -1,4 +1,5 @@
 import NavBar from "@/components/nav/NavBar";
+import HeaderVideo from "@/components/header/HeaderVideo";
 import RowTour from "@/components/Tour/RowTour ";
 import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
@@ -7,16 +8,8 @@ import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Reviews from "@/components/Reviews/Reviews";
-import dynamic from "next/dynamic";
-const DynamicSliderHeader = dynamic(
-  () => import("@/components/SliderHeader/SliderHeader"),
-  {
-    loading: () => (
-      <div className=" w-full h-[230px]  md:h-[530px] bg-white"></div>
-    ),
-    ssr: false, // Disable server-side rendering for this component
-  }
-);
+import SliderHeader from "@/components/SliderHeader/SliderHeader";
+
 export default function Home({
   packages,
   destinations,
@@ -70,7 +63,7 @@ export default function Home({
       )} */}
       <NavBar menus={menus} logo={logo} />
       {/* <HeaderVideo /> */}
-      <DynamicSliderHeader sliders={sliders} />
+      <SliderHeader sliders={sliders} />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />
