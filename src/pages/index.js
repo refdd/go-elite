@@ -7,8 +7,6 @@ import RowGuides from "@/components/guides/RowGuides";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
-import Script from "next/script";
-import { useEffect, useState } from "react";
 import Reviews from "@/components/Reviews/Reviews";
 import SliderHeader from "@/components/SliderHeader/SliderHeader";
 
@@ -20,15 +18,15 @@ export default function Home({
   allReviews,
   menus,
   sliders,
+  logo,
 }) {
-  const [isloding, setIsloding] = useState(false);
+  // const [isloding, setIsloding] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsloding(true);
-    }, 10000);
-  }, []);
-  console.log(sliders);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsloding(true);
+  //   }, 10000);
+  // }, []);
   return (
     <div>
       <Head>
@@ -37,7 +35,7 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isloding && (
+      {/* {isloding && (
         <Script
           strategy="lazyOnload"
           onLoad={() => {
@@ -62,10 +60,10 @@ export default function Home({
              gtag('config', 'GTM-P7GBDH9');
            `}
         </Script>
-      )}
-      <NavBar menus={menus} />
+      )} */}
+      <NavBar menus={menus} logo={logo} />
       {/* <HeaderVideo /> */}
-      <SliderHeader />
+      <SliderHeader sliders={sliders} />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />
@@ -95,6 +93,9 @@ export async function getStaticProps() {
   const sliders = await fetchApi(
     `${baseUrl}/sliders?tenant_id=9&language_id=5&status=active`
   );
+  const logo = await fetchApi(
+    `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
+  );
   return {
     props: {
       packages: packages.rows,
@@ -104,6 +105,7 @@ export async function getStaticProps() {
       allReviews: allReviews.rows,
       menus: menus.rows,
       sliders: sliders.rows,
+      logo: logo.row,
     },
   };
 }
