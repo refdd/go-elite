@@ -1,12 +1,20 @@
 import NavBar from "@/components/nav/NavBar";
-import RowTour from "@/components/Tour/RowTour ";
 import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
-import RowGuides from "@/components/guides/RowGuides";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
-import Reviews from "@/components/Reviews/Reviews";
+import dynamic from "next/dynamic";
+const RowTour = dynamic(() => import("../components/Tour/RowTour "), {
+  ssr: false,
+});
+
+const RowGuides = dynamic(() => import("../components/guides/RowGuides"), {
+  ssr: false,
+});
+const Reviews = dynamic(() => import("../components/Reviews/Reviews"), {
+  ssr: false,
+});
 export default function Home({
   packages,
   destinations,
