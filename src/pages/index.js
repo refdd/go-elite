@@ -1,13 +1,33 @@
 import NavBar from "@/components/nav/NavBar";
-import RowTour from "@/components/Tour/RowTour ";
-import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
-import RowGuides from "@/components/guides/RowGuides";
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
-import Reviews from "@/components/Reviews/Reviews";
-import SliderHeader from "@/components/SliderHeader/SliderHeader";
+import dynamic from "next/dynamic";
+const LazyRowTour = dynamic(() => import("../components/Tour/RowTour "), {
+  ssr: false,
+});
+const LazyRowDestination = dynamic(
+  () => import("../components/destination/RowDestination.jsx"),
+  {
+    ssr: false,
+  }
+);
+const LazyRowGuides = dynamic(
+  () => import("../components/guides/RowGuides.jsx"),
+  {
+    ssr: false,
+  }
+);
+const LazyReviews = dynamic(() => import("../components/Reviews/Reviews.jsx"), {
+  ssr: false,
+});
+const LazySliderHeader = dynamic(
+  () => import("../components/SliderHeader/SliderHeader.jsx"),
+  {
+    ssr: false,
+  }
+);
 export default function Home({
   packages,
   destinations,
@@ -26,12 +46,12 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <LazySliderHeader sliders={sliders} />
       <NavBar menus={menus} logo={logo} />
-      <SliderHeader sliders={sliders} />
-      <RowTour packages={packages} />
-      <RowDestination destinations={destinations} />
-      <RowGuides wikis={wikis} />
-      <Reviews allReviews={allReviews} />
+      <LazyRowTour packages={packages} />
+      <LazyRowDestination destinations={destinations} />
+      <LazyRowGuides wikis={wikis} />
+      <LazyReviews allReviews={allReviews} />
       <FAQs faqs={faqs} />
       <Footer />
     </div>
