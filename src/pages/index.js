@@ -29,7 +29,7 @@ export default function Home({ packages, destinations, wikis, faqs }) {
       </Head>
       {isloding && (
         <Script
-          strategy="worker"
+          strategy="lazyOnload"
           onLoad={() => {
             console.log("Script has loaded");
           }}
