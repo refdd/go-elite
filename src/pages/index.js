@@ -20,6 +20,7 @@ export default function Home({
   allReviews,
   menus,
   sliders,
+  logo,
 }) {
   const [isloding, setIsloding] = useState(false);
 
@@ -28,7 +29,7 @@ export default function Home({
       setIsloding(true);
     }, 10000);
   }, []);
-  console.log(sliders);
+  console.log(logo);
   return (
     <div>
       <Head>
@@ -63,7 +64,7 @@ export default function Home({
            `}
         </Script>
       )}
-      <NavBar menus={menus} />
+      <NavBar menus={menus} logo={logo} />
       {/* <HeaderVideo /> */}
       <SliderHeader sliders={sliders} />
       <RowTour packages={packages} />
@@ -95,6 +96,9 @@ export async function getStaticProps() {
   const sliders = await fetchApi(
     `${baseUrl}/sliders?tenant_id=9&language_id=5&status=active`
   );
+  const logo = await fetchApi(
+    `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
+  );
   return {
     props: {
       packages: packages.rows,
@@ -104,6 +108,7 @@ export async function getStaticProps() {
       allReviews: allReviews.rows,
       menus: menus.rows,
       sliders: sliders.rows,
+      logo: logo.row,
     },
   };
 }
