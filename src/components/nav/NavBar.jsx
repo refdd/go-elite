@@ -37,7 +37,10 @@ function NavBar({ menus }) {
                 </Link>
               </li>
               {menus?.map((menu) => (
-                <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
+                <li
+                  key={menu?.id}
+                  className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer"
+                >
                   <Link href={`${menu?.slug}`}>
                     <span>{menu?.title}</span>
                   </Link>
