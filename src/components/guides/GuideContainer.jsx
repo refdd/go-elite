@@ -7,6 +7,7 @@ import image1 from "../../../public/assets/image/tourimage (2).webp";
 import GuideCard from "./GuideCard";
 
 function GuideContainer({ wikis }) {
+  console.log(wikis[0]);
   return (
     <div className=" ">
       <Swiper
@@ -37,6 +38,7 @@ function GuideContainer({ wikis }) {
             <GuideCard
               imgSrc={wiki?.image?.image_url}
               description={wiki?.short_body}
+              title={wiki?.title}
             />
           </SwiperSlide>
         ))}

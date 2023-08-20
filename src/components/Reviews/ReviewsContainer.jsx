@@ -3,11 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import image1 from "../../../public/assets/image/tourimage (2).webp";
 import CardReviews from "./CardReviews";
 
 function ReviewsContainer({ allReviews }) {
-  console.log(allReviews[0]);
   return (
     <div className=" mt-5">
       <Swiper
