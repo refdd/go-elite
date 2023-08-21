@@ -13,6 +13,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <Script
+          id="google-tag-manager"
           onLoad={() => {
             console.log("Script has loaded");
           }}
