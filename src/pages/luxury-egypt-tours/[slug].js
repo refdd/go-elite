@@ -11,17 +11,11 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
-const SingleTaps = dynamic(
-  () => import("../../components/singelTour/SingleTaps"),
-  {
-    ssr: false,
-  }
+const SingleTaps = dynamic(() =>
+  import("../../components/singelTour/SingleTaps")
 );
-const LeaveReview = dynamic(
-  () => import("../../components/singelTour/LeaveReview"),
-  {
-    ssr: false,
-  }
+const LeaveReview = dynamic(() =>
+  import("../../components/singelTour/LeaveReview")
 );
 function Singeltour({ singletour, faqs, menus, logo }) {
   const [tapsValue, setTapsValue] = React.useState(0);

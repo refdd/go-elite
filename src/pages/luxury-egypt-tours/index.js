@@ -7,15 +7,10 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
-const FilterContainer = dynamic(
-  () => import("../../components/Filter/FilterContainer.jsx"),
-  {
-    ssr: false,
-  }
+const FilterContainer = dynamic(() =>
+  import("../../components/Filter/FilterContainer.jsx")
 );
-const From = dynamic(() => import("../../components/From/From.jsx"), {
-  ssr: false,
-});
+const From = dynamic(() => import("../../components/From/From.jsx"));
 function index({ packages, menus, logo }) {
   // console.log(packages);
   return (
