@@ -37,7 +37,7 @@ function NavBar({ menus, logo }) {
           <div className=" flex items-center gap-10 md:items-center justify-end">
             <LinksNav menus={menus} />
 
-            <div className="py-2 px-6 w-[151px]  cursor-pointer bg-[#01a8c3] transition-all rounded-3xl flex justify-center items-center gap-2 ">
+            <div className="py-2 px-6 w-[151px]  cursor-pointer bg-[#01a8c3] transition-all rounded-sm flex justify-center items-center gap-2 ">
               <button className="text-[16px] text-white font-sans capitalize font-normal ">
                 Inquire
               </button>

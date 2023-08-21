@@ -16,7 +16,7 @@ function CardTour({
   return (
     <div className="rounded-[6px] border border-[#00000020]   my-5  ">
       <div className="flex flex-col gap-2 ">
-        <div className="relative w-full h-[213px]">
+        <div className="relative w-full h-[165px]">
           <Image
             alt="tourImage"
             src={imgSrc}
@@ -36,7 +36,13 @@ function CardTour({
               {title}
             </p>
             <div className="">
-              <Rating name="read-only" value={value} readOnly />
+              <Rating
+                name="read-only"
+                value={value}
+                readOnly
+                size="2"
+                sx={{ fontSize: "16px", color: "#ffe234" }}
+              />
             </div>
           </div>
           {/* desc */}
