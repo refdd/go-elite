@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { LiaAngleDownSolid } from "react-icons/lia";
 
 function AccordionFAQ({ faqs }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -21,11 +20,7 @@ function AccordionFAQ({ faqs }) {
               <h2 className=" text-textColor text-[15px] md:text-lg font-medium font-sans capitalize">
                 {q.title}
               </h2>
-              <div className="w-[20%] md:w-[10%] flex items-center justify-center">
-                <LiaAngleDownSolid
-                  className={activeIndex === index ? "rotate-180" : ""}
-                />
-              </div>
+              <div className="w-[20%] md:w-[10%] flex items-center justify-center"></div>
             </button>
             {activeIndex === index && (
               <div

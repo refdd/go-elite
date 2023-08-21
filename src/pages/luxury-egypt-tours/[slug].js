@@ -4,16 +4,26 @@ import From from "@/components/From/From";
 import NavBar from "@/components/nav/NavBar";
 import HeaderSingleTour from "@/components/singelTour/HeaderSingleTour";
 import Itinerary from "@/components/singelTour/Itinerary";
-import LeaveReview from "@/components/singelTour/LeaveReview";
 import Overview from "@/components/singelTour/Overview";
 import PricesAccommodation from "@/components/singelTour/PricesAccommodation";
-import SingleTaps from "@/components/singelTour/SingleTaps";
 import Trip_Information from "@/components/singelTour/Trip_Information";
 import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
-
-function Singeltour({ singletour, faqs, menus }) {
+import dynamic from "next/dynamic";
+const SingleTaps = dynamic(
+  () => import("../../components/singelTour/SingleTaps"),
+  {
+    ssr: false,
+  }
+);
+const LeaveReview = dynamic(
+  () => import("../../components/singelTour/LeaveReview"),
+  {
+    ssr: false,
+  }
+);
+function Singeltour({ singletour, faqs, menus, logo }) {
   const [tapsValue, setTapsValue] = React.useState(0);
 
   const handleChangeTaps = (event, newValue) => {
@@ -42,7 +52,7 @@ function Singeltour({ singletour, faqs, menus }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar menus={menus} />
+      <NavBar menus={menus} logo={logo} />
       <HeaderSingleTour
         image={image}
         title={title}
@@ -92,11 +102,15 @@ export async function getServerSideProps({ params }) {
     `${baseUrl}/faqs?tenant_id=9&language_id=5&viewInHome=1&status=active&paginate=5`
   );
   const menus = await fetchApi(`${baseUrl}/menus?tenant_id=9&language_id=5`);
+  const logo = await fetchApi(
+    `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
+  );
   return {
     props: {
       singletour: singletour.row,
       faqs: faqs.rows,
       menus: menus.rows,
+      logo: logo.row,
     }, // will be passed to the page component as props
   };
 }
