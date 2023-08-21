@@ -11,7 +11,7 @@ const FilterContainer = dynamic(() =>
   import("../../components/Filter/FilterContainer.jsx")
 );
 const From = dynamic(() => import("../../components/From/From.jsx"));
-function index({ packages, menus, logo }) {
+function index({ packages, menus, logo, footer, socials }) {
   // console.log(packages);
   return (
     <div>
@@ -33,7 +33,7 @@ function index({ packages, menus, logo }) {
         </div>
       </div>
       <FAQs />
-      <Footer />
+      <Footer logo={logo} footer={footer} socials={socials} />
     </div>
   );
 }
@@ -47,11 +47,20 @@ export async function getStaticProps() {
   const logo = await fetchApi(
     `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
   );
+  const footer = await fetchApi(
+    `${baseUrl}/footer?tenant_id=9&language_id=5&status=active`
+  );
+  const socials = await fetchApi(
+    `${baseUrl}/socials?tenant_id=9&language_id=5&status=active`
+  );
+
   return {
     props: {
       packages: packages.rows,
       menus: menus.rows,
       logo: logo.row,
+      footer: footer.rows,
+      socials: socials.rows,
     },
     revalidate: 10,
   };
