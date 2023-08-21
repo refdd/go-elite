@@ -31,7 +31,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar menus={menus} logo={logo} />
-      <SliderHeader sliders={sliders} />
+      {/* <SliderHeader sliders={sliders} /> */}
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />
