@@ -11,8 +11,7 @@ const FilterContainer = dynamic(() =>
   import("../../components/Filter/FilterContainer.jsx")
 );
 const From = dynamic(() => import("../../components/From/From.jsx"));
-function ListTour({ packages, menus, logo, footer, socials }) {
-  // console.log(packages);
+function ListDestination({ packages, menus, logo, footer, socials }) {
   return (
     <div>
       <Head>
@@ -24,8 +23,8 @@ function ListTour({ packages, menus, logo, footer, socials }) {
       <NavBar menus={menus} logo={logo} />
       <MainHead />
       <FilterContainer />
-      <div className="container mx-auto px-4 md:px-10    mt-10 grid grid-cols-1 gap-10 md:grid-cols-7">
-        <div className="md:col-span-4">
+      <div className="container mx-auto px-4 md:px-10    mt-10 grid grid-cols-1 gap-10 md:grid-cols-8">
+        <div className="md:col-span-5">
           <ListTourContainer packages={packages} />
         </div>
         <div className="md:col-span-3">
@@ -37,11 +36,10 @@ function ListTour({ packages, menus, logo, footer, socials }) {
     </div>
   );
 }
-
-export default ListTour;
-export async function getServerSideProps() {
+export default ListDestination;
+export async function getServerSideProps({ params }) {
   const packages = await fetchApi(
-    `${baseUrl}/packages/?tenant_id=9&language_id=5&&viewInHome=1&status=active`
+    `${baseUrl}/packages?tenant_id=9&language_id=5&destination_slug=${params.desSlug}&viewInDestomatopmHome=1&destinations_ids=&duration_id=&min_price=&max_price=&price_sort=asc&keyword=&type=&paginate=50`
   );
   const menus = await fetchApi(`${baseUrl}/menus?tenant_id=9&language_id=5`);
   const logo = await fetchApi(
@@ -62,6 +60,5 @@ export async function getServerSideProps() {
       footer: footer.rows,
       socials: socials.rows,
     },
-    revalidate: 10,
   };
 }

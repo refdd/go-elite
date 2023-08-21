@@ -28,7 +28,7 @@ function Footer({ logo, footer, socials }) {
           </div>
           <div className="">
             <p className="text-[16px] text-[#3d3d3d] font-sans capitalize font-bold pb-3">
-              {footer[1]?.title}
+              {footer && footer[1]?.title}
             </p>
             <ul className="flex flex-col gap-3">
               {footer[1]?.links?.map((link) => (

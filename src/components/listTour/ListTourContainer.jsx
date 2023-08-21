@@ -1,6 +1,7 @@
 import React from "react";
 import CardListTour from "./CardListTour";
 function ListTourContainer({ packages }) {
+  console.log(packages);
   return (
     <div className=" ">
       <div className="grid grid-cols-1 gap-4">
@@ -14,6 +15,8 @@ function ListTourContainer({ packages }) {
             duration={tour?.duration}
             slug={tour?.slug}
             price={tour?.start_price}
+            tour_type={tour?.tour_type}
+            supSlug={tour?.destination?.slug}
           />
         ))}
       </div>
