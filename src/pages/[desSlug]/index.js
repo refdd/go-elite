@@ -8,7 +8,7 @@ import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 import From from "@/components/From/From";
 
-function ListDestination({ packages, menus, logo, footer, socials }) {
+function ListDestination({ packages, menus, logo, footer, socials, faqs }) {
   return (
     <div>
       <Head>
@@ -28,7 +28,7 @@ function ListDestination({ packages, menus, logo, footer, socials }) {
           <From />
         </div>
       </div>
-      <FAQs />
+      <FAQs faqs={faqs} />
       <Footer logo={logo} footer={footer} socials={socials} />
     </div>
   );
@@ -48,7 +48,9 @@ export async function getServerSideProps({ params }) {
   const socials = await fetchApi(
     `${baseUrl}/socials?tenant_id=9&language_id=5&status=active`
   );
-
+  const faqs = await fetchApi(
+    `${baseUrl}/faqs?tenant_id=9&language_id=5&viewInHome=1&status=active&paginate=5`
+  );
   return {
     props: {
       packages: packages.rows,
@@ -56,6 +58,7 @@ export async function getServerSideProps({ params }) {
       logo: logo.row,
       footer: footer.rows,
       socials: socials.rows,
+      faqs: faqs.rows,
     },
   };
 }
