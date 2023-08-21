@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { PiSunHorizonDuotone } from "react-icons/pi";
-import { GiMeal } from "react-icons/gi";
 function CardDestination({ imgSrc, country }) {
   return (
     // <div className=" group my-5 mx-4 md:mx-0 h-[350px]">

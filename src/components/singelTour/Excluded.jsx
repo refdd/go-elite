@@ -1,6 +1,4 @@
 import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
-
 function Excluded({ exclusion }) {
   return (
     <div className="mt-5">

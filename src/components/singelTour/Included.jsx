@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineCheck } from "react-icons/ai";
 
 function Included({ inclusion }) {
   return (
