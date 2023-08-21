@@ -3,10 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import dynamic from "next/dynamic";
-const SingelSlider = dynamic(() => import("./SingelSlider"), {
-  ssr: false,
-});
+import SingelSlider from "./SingelSlider";
+
 function SliderHeader({ sliders }) {
   return (
     <div className="sliderConteriner">
