@@ -17,7 +17,7 @@ export default function Document() {
           onLoad={() => {
             console.log("Script has loaded");
           }}
-          strategy="afterInteractive"
+          strategy="worker"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,6 +31,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7GBDH9"

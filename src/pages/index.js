@@ -19,6 +19,8 @@ export default function Home({
   sliders,
   logo,
   pages,
+  footer,
+  socials,
 }) {
   return (
     <div>
@@ -36,7 +38,7 @@ export default function Home({
       <Reviews allReviews={allReviews} />
       <FAQs faqs={faqs} />
       <FixdButton />
-      <Footer />
+      <Footer logo={logo} footer={footer} socials={socials} />
     </div>
   );
 }
@@ -64,6 +66,12 @@ export async function getStaticProps() {
     `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
   );
   const pages = await fetchApi(`${baseUrl}/pages?tenant_id=9&language_id=5`);
+  const footer = await fetchApi(
+    `${baseUrl}/footer?tenant_id=9&language_id=5&status=active`
+  );
+  const socials = await fetchApi(
+    `${baseUrl}/socials?tenant_id=9&language_id=5&status=active`
+  );
   return {
     props: {
       packages: packages.rows,
@@ -75,6 +83,8 @@ export async function getStaticProps() {
       sliders: sliders.rows,
       logo: logo.row,
       pages: pages.rows,
+      footer: footer.rows,
+      socials: socials.rows,
     },
   };
 }
