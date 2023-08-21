@@ -15,7 +15,7 @@ function NavBar({ menus, logo }) {
       <div className="grid grid-cols-2 md:grid-cols-5  items-center  ">
         {/* logo  */}
         <div className="md:col-span-1">
-          <div className=" relative w-[100%] h-[80px]">
+          <div className=" relative w-[100%] h-[80px] md:h-[90px]">
             <Link href={"/"}>
               <Image
                 alt="logo"

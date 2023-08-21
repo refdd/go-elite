@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import image1 from "../../../public/assets/image/tourimage (2).webp";
 import GuideCard from "./GuideCard";
 
 function GuideContainer({ wikis }) {
@@ -26,10 +24,6 @@ function GuideContainer({ wikis }) {
             spaceBetween: 32,
           },
         }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
         className="guide-container"
       >
         {wikis?.map((wiki) => (

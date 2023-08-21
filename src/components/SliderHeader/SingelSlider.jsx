@@ -3,7 +3,7 @@ import React from "react";
 
 function SingelSlider({ imgsrc, title, button }) {
   return (
-    <div className="relative w-full h-[230px]  md:h-[530px] overflow-hidden ">
+    <div className="relative w-full h-[230px]  md:h-[530px]   ">
       <Image
         alt="tourImage"
         src={imgsrc}
