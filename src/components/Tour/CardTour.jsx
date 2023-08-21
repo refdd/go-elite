@@ -11,6 +11,7 @@ function CardTour({
   description,
   stars,
   duration,
+  tourType,
 }) {
   const [value, setValue] = useState(stars);
   return (
@@ -56,7 +57,9 @@ function CardTour({
           </div>
           {/* duration */}
           <div className="">
-            <p className="text-base font-bold capitalize">{duration}</p>
+            <p className="text-base font-bold capitalize">
+              {duration} | {tourType}
+            </p>
           </div>
           {/* price */}
           <div className="flex items-center justify-between">

@@ -4,7 +4,7 @@ import SupLinkmenu from "./SupLinkmenu";
 
 function LinksNav({ menus }) {
   return (
-    <ul className="flex items-center gap-3">
+    <ul className="flex items-center gap-10">
       <li className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
         <Link href={"/"}>
           <span>Home</span>

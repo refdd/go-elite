@@ -22,10 +22,12 @@ function SingelSlider({ imgsrc, title, button }) {
             {title}
           </p>
           {button && (
-            <div className="py-2 px-3 flex justify-center items-center bg-[#01a8c3] rounded-[5px]">
-              <button className="text-white text-sm md:text-base">
-                view tour
-              </button>
+            <div className=" flex justify-center items-center">
+              <div className="py-[18px] px-6 w-fit flex justify-center items-center bg-[#01a8c3] rounded-[5px]">
+                <button className="text-white text-sm md:text-lg capitalize">
+                  view tour
+                </button>
+              </div>
             </div>
           )}
         </div>

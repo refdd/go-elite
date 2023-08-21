@@ -3,7 +3,10 @@ import React from "react";
 import logoFooter from "../../../public/assets/image/logo.svg";
 function Footer() {
   return (
-    <div className=" mt-10 " id="footer">
+    <div className="  " id="footer">
+      <div className="flex justify-end">
+        <div className="border border-[#7a7a7a] w-[70%] my-10"></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-7 py-6 ">
           {/* lgo */}

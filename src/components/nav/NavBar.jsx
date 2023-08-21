@@ -11,11 +11,11 @@ function NavBar({ menus, logo }) {
     setMenuBar(!menuBar);
   };
   return (
-    <div className="container mx-auto px-4">
-      <div className="grid grid-cols-2 md:grid-cols-5  items-center  ">
+    <div className="container mx-auto px-4 py-4">
+      <div className="grid grid-cols-2 md:grid-cols-7  items-center  ">
         {/* logo  */}
         <div className="md:col-span-1">
-          <div className=" relative w-[100%] h-[80px] md:h-[90px]">
+          <div className=" relative w-[100%] h-[80px] md:h-[70px]">
             <Link href={"/"}>
               <Image
                 alt="logo"
@@ -33,11 +33,11 @@ function NavBar({ menus, logo }) {
         </div>
         <MenuBar handelMenubar={handelMenubar} />
         {/* list nav */}
-        <div className="md:col-span-4  hidden md:block">
+        <div className="md:col-span-6  hidden md:block">
           <div className=" flex items-center gap-10 md:items-center justify-end">
             <LinksNav menus={menus} />
 
-            <div className="py-2 px-6 w-[151px]  cursor-pointer bg-[#01a8c3] transition-all rounded-sm flex justify-center items-center gap-2 ">
+            <div className="py-2 h-[60px] w-[151px]  cursor-pointer bg-[#01a8c3] transition-all rounded-2xl flex justify-center items-center gap-2 ">
               <button className="text-[16px] text-white font-sans capitalize font-normal ">
                 Inquire
               </button>

@@ -31,7 +31,7 @@ function GuideCard({ imgSrc, description, title }) {
           <div className=" flex justify-end ">
             <div className="py-2 px-6 cursor-pointer bg-transparent border-[1px] border-[#3d3d3d]  transition-all  rounded-md w-fit ">
               <button className="text-[16px] text-[#3d3d3d] font-sans capitalize font-bold ">
-                see more
+                Read more
               </button>
             </div>
           </div>

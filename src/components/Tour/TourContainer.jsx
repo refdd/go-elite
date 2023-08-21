@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import CardTour from "./CardTour";
 import { Navigation, Pagination } from "swiper/modules";
 function TourContainer({ packages }) {
+  console.log(packages);
   return (
     <div className=" md:col-span-2">
       <Swiper
@@ -42,6 +43,7 @@ function TourContainer({ packages }) {
               description={tour?.title?.substring(0, 50)}
               stars={tour?.stars}
               duration={tour?.duration}
+              tourType={tour?.tour_type}
             />
           </SwiperSlide>
         ))}
