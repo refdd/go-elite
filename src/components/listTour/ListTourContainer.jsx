@@ -1,7 +1,6 @@
 import React from "react";
 import CardListTour from "./CardListTour";
-function ListTourContainer({ packages }) {
-  console.log(packages);
+function ListTourContainer({ packages, cruisesSlug }) {
   return (
     <div className=" ">
       <div className="grid grid-cols-1 gap-4">
@@ -16,7 +15,9 @@ function ListTourContainer({ packages }) {
             slug={tour?.slug}
             price={tour?.start_price}
             tour_type={tour?.tour_type}
-            supSlug={tour?.destination?.slug}
+            supSlug={
+              tour?.destination?.slug ? tour?.destination?.slug : cruisesSlug
+            }
           />
         ))}
       </div>

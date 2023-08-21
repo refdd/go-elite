@@ -3,7 +3,6 @@ import Footer from "@/components/Footer/Footer";
 import From from "@/components/From/From";
 import NavBar from "@/components/nav/NavBar";
 import HeaderSingleTour from "@/components/singelTour/HeaderSingleTour";
-import Itinerary from "@/components/singelTour/Itinerary";
 import Overview from "@/components/singelTour/Overview";
 import PricesAccommodation from "@/components/singelTour/PricesAccommodation";
 import Trip_Information from "@/components/singelTour/Trip_Information";
@@ -11,13 +10,15 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
+import ItineraryCruises from "@/components/singelTour/ItineraryCruises";
 const SingleTaps = dynamic(() =>
   import("../../components/singelTour/SingleTaps")
 );
 const LeaveReview = dynamic(() =>
   import("../../components/singelTour/LeaveReview")
 );
-function Singeltour({ singletour, faqs, menus, logo, footer, socials }) {
+
+function SingelCruises({ singletour, faqs, menus, logo, footer, socials }) {
   const [tapsValue, setTapsValue] = React.useState(0);
 
   const handleChangeTaps = (event, newValue) => {
@@ -38,7 +39,9 @@ function Singeltour({ singletour, faqs, menus, logo, footer, socials }) {
     TripInformation,
     meta,
   } = singletour;
-  // console.log(singletour);
+  console.log("====================================");
+  console.log(itineraries);
+  console.log("====================================");
   return (
     <div>
       <Head>
@@ -67,12 +70,12 @@ function Singeltour({ singletour, faqs, menus, logo, footer, socials }) {
                   inclusion={inclusion}
                   exclusion={exclusion}
                 />
-                <Itinerary itineraries={itineraries} />
+                <ItineraryCruises itineraries={itineraries} />
                 <PricesAccommodation accommodations={accommodations} />
                 <Trip_Information allTripInformation={TripInformation} />
               </>
             )}
-            {tapsValue == 1 && <Itinerary itineraries={itineraries} />}
+            {tapsValue == 1 && <ItineraryCruises itineraries={itineraries} />}
             {tapsValue == 2 && (
               <PricesAccommodation accommodations={accommodations} />
             )}
@@ -91,12 +94,13 @@ function Singeltour({ singletour, faqs, menus, logo, footer, socials }) {
     </div>
   );
 }
-export default Singeltour;
+
+export default SingelCruises;
 export async function getServerSideProps({ params }) {
   const slug = params?.slug || "";
 
   const singletour = await fetchApi(
-    `${baseUrl}/packages/${slug}?tenant_id=9&language_id=5`
+    `${baseUrl}/cruises/${slug}?tenant_id=9&language_id=5`
   );
   const faqs = await fetchApi(
     `${baseUrl}/faqs?tenant_id=9&language_id=5&viewInHome=1&status=active&paginate=5`

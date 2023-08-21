@@ -13,7 +13,7 @@ function ItineraryDays({ itineraries }) {
       <div className=" mt-5">
         <div className=" flex flex-col gap-5">
           {itineraries?.map((q, index) => (
-            <div key={q.id} className="  flex items-center gap-3   ">
+            <div key={index} className="  flex items-center gap-3   ">
               <div className="w-12 h-12 mx-3 bg-[#01a8c3] rounded-full flex justify-center items-center">
                 <span className="text-[#fff] font-medium">{index + 1}</span>
               </div>
