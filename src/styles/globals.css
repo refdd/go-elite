@@ -12,7 +12,7 @@ body {
 .myTourSlides .swiper-pagination {
   display: block !important;
   bottom: -4px !important;
-  left: -165px !important;
+  /* left: -165px !important; */
   padding-bottom: 20px;
 }
 .myTourSlides .swiper-pagination-bullet {
@@ -24,21 +24,35 @@ body {
 .myTourSlides .swiper-pagination-bullet-active {
   background-color: #869791 !important;
 }
-
-.swiper-button-prev {
+.myTourSlides .swiper-button-prev,
+.myTourSlides .swiper-button-next {
+  top: var(--swiper-navigation-top-offset, 93%);
+  color: #f5f5f5 !important;
+  font-size: 10px !important;
+  font-weight: 900;
+  background: #000;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+.myTourSlides .swiper-button-prev:after,
+.myTourSlides .swiper-button-next:after {
+  font-size: 16px !important;
+}
+.myHeaderSlider .swiper-button-prev {
   display: none !important ;
 }
-.swiper-button-next {
+.myHeaderSlider .swiper-button-next {
   display: none !important ;
 }
-.swiper-button-prev,
-.swiper-button-next {
+.myHeaderSlider .swiper-button-prev,
+.myHeaderSlider .swiper-button-next {
   color: #f5f5f5 !important;
   font-size: 10px !important;
   font-weight: 900;
 }
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.myHeaderSlider .swiper-button-prev:after,
+.myHeaderSlider .swiper-button-next:after {
   font-size: 30px !important;
 }
 
@@ -47,4 +61,13 @@ body {
 }
 .myHeaderSlider:hover .swiper-button-next {
   display: flex !important;
+}
+@media only screen and (max-width: 786px) {
+  .myTourSlides .swiper-pagination {
+    left: 0 !important;
+  }
+}
+@media only screen and (min-width: 786px) {
+  .myTourSlides .swiper-button-prev {
+  }
 }

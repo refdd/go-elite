@@ -13,7 +13,7 @@ function RowTour({ packages }) {
         }
       />
       <div className="grid grid-cols-1 gap-0 md:grid-cols-3 ">
-        <div className="tour md:col-span-1">
+        <div className="tour md:col-span-1 hidden md:block">
           <TailormakeCard />
         </div>
         <TourContainer packages={packages} />

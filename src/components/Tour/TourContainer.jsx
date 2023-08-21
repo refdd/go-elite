@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import CardTour from "./CardTour";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 function TourContainer({ packages }) {
   return (
     <div className=" md:col-span-2">
@@ -28,7 +28,8 @@ function TourContainer({ packages }) {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        navigation={true}
+        modules={[Pagination, Navigation]}
       >
         {packages?.map((tour) => (
           <SwiperSlide key={tour.id}>
