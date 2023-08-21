@@ -8,6 +8,8 @@ function TripInformation({ allTripInformation }) {
   };
   return (
     <div className="mt-5">
+      <p className="text-xl text-[#3D3D3D] font-bold mb-3">Trip Information</p>
+
       <div className="">
         {allTripInformation?.map((q, index) => (
           <div
@@ -18,7 +20,7 @@ function TripInformation({ allTripInformation }) {
               className="flex  w-full items-center justify-between text-left   gap-2   "
               onClick={() => handleClick(index)}
             >
-              <h2 className=" text-textColor text-[15px] md:text-lg font-medium font-sans capitalize">
+              <h2 className=" text-textColor  md:text-[28px] font-medium font-sans capitalize">
                 {q.title}
               </h2>
               <div className="w-[20%] md:w-[10%] flex items-center justify-center">

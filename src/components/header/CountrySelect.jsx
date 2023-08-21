@@ -32,7 +32,7 @@ export default function CountrySelect() {
         <TextField
           {...params}
           variant="filled"
-          label="Choose a country"
+          label="Nationality "
           sx={{
             "& .MuiInputBase-root": {
               backgroundColor: "transparent",

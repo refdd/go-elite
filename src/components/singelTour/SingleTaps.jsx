@@ -56,6 +56,12 @@ function SingleTaps({ value, handleChange }) {
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
+          sx={{
+            ".scrollable": {
+              display: "none",
+            },
+          }}
+          className=""
         >
           <Tab
             label="Overview"

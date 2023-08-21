@@ -75,7 +75,7 @@ function From() {
                   id="message"
                   rows="3"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
-                  placeholder="More Information"
+                  placeholder="Please detail your trip requirements and needs *"
                   {...methods.register("comment", { required: true })}
                 ></textarea>
               </div>

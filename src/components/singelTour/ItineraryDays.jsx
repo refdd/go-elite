@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdArrowDropDownCircle } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 function ItineraryDays({ itineraries }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const handleClick = (index) => {
@@ -8,31 +8,27 @@ function ItineraryDays({ itineraries }) {
   return (
     <div>
       <div className="flex flex-col ">
-        <p className="text-base text-[#3D3D3D] font-bold">Itinerary</p>
-        <p className="text-sm text-[#3D3D3D] font-normal">Every Friday</p>
+        <p className="text-xl text-[#3D3D3D] font-bold">Itinerary</p>
       </div>
       <div className=" mt-5">
-        <div className="">
+        <div className=" flex flex-col gap-5">
           {itineraries?.map((q, index) => (
-            <div
-              key={q.id}
-              className=" border border-[#DDD] mb-8 py-5 px-3 rounded-lg  "
-            >
+            <div key={q.id} className="  flex items-center gap-3   ">
+              <div className="w-12 h-12 mx-3 bg-[#01a8c3] rounded-full flex justify-center items-center">
+                <span className="text-[#fff] font-medium">{index + 1}</span>
+              </div>
               <button
-                className="flex  w-full items-center justify-between text-left   gap-2   "
+                className="flex  w-full items-center justify-between text-left   gap-2  border border-[#DDD]  py-5 px-3 rounded-lg  "
                 onClick={() => handleClick(index)}
               >
                 <div className=" flex items-center gap-2">
-                  <div className="w-7 h-7 bg-[#00229E] rounded-full flex justify-center items-center">
-                    <span className="text-[#fff] font-medium">{index + 1}</span>
-                  </div>
                   <h2 className=" text-textColor text-[15px] md:text-lg font-medium font-sans capitalize">
                     {q.title}
                   </h2>
                 </div>
                 <div className="w-[20%] md:w-[10%] flex items-center justify-center">
-                  <MdArrowDropDownCircle
-                    className={` text-3xl text-[#00229E]${
+                  <MdKeyboardArrowDown
+                    className={` text-3xl text-[#3d3d3d] ${
                       activeIndex === index ? "rotate-180" : " rotate-0"
                     } `}
                   />

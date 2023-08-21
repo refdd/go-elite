@@ -45,7 +45,8 @@ body {
 .myHeaderSlider .swiper-button-next {
   display: none !important ;
 }
-.myHeaderSlider {
+.myHeaderSlider,
+.singelSlider {
   z-index: -1 !important;
 }
 .myHeaderSlider .swiper-button-prev,
@@ -71,6 +72,7 @@ body {
   }
 }
 @media only screen and (min-width: 786px) {
-  .myTourSlides .swiper-button-prev {
+  .MuiTabs-flexContainer.css-heg063-MuiTabs-flexContainer {
+    justify-content: space-around !important;
   }
 }

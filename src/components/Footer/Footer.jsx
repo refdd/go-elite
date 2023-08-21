@@ -3,7 +3,6 @@ import React from "react";
 import logoFooter from "../../../public/assets/image/logo.svg";
 import Link from "next/link";
 function Footer({ logo, footer, socials }) {
-  console.log(socials);
   return (
     <div className="  " id="footer">
       <div className="flex justify-end">
@@ -46,7 +45,7 @@ function Footer({ logo, footer, socials }) {
           <div className="">
             <p className="text-[16px] text-[#3d3d3d] font-sans capitalize font-bold pb-3">
               {" "}
-              {footer[2].title}
+              {footer && footer[2].title}
             </p>
             <ul className="flex flex-col gap-3">
               <li className="text-[16px] text-[#3d3d3d] font-sans capitalize ">
