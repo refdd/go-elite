@@ -17,7 +17,7 @@ const SingleTaps = dynamic(() =>
 const LeaveReview = dynamic(() =>
   import("../../components/singelTour/LeaveReview")
 );
-function Singeltour({ singletour, faqs, menus, logo, socials, footer }) {
+function Singeltour({ singletour, faqs, menus, logo }) {
   const [tapsValue, setTapsValue] = React.useState(0);
 
   const handleChangeTaps = (event, newValue) => {
@@ -81,7 +81,7 @@ function Singeltour({ singletour, faqs, menus, logo, socials, footer }) {
         </div>
       </div>
       <FAQs faqs={faqs} />
-      {/* <Footer logo={logo} footer={footer} socials={socials} /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
@@ -99,20 +99,12 @@ export async function getServerSideProps({ params }) {
   const logo = await fetchApi(
     `${baseUrl}/settings/logo?tenant_id=9&language_id=5`
   );
-  const footer = await fetchApi(
-    `${baseUrl}/footer?tenant_id=9&language_id=5&status=active`
-  );
-  const socials = await fetchApi(
-    `${baseUrl}/socials?tenant_id=9&language_id=5&status=active`
-  );
   return {
     props: {
       singletour: singletour.row,
       faqs: faqs.rows,
       menus: menus.rows,
       logo: logo.row,
-      footer: footer.row,
-      socials: socials.row,
-    },
+    }, // will be passed to the page component as props
   };
 }

@@ -19,7 +19,7 @@ function CardListTour({
     <div className="rounded-md bg-white shadow-md  ">
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 ">
         <div className="md:col-span-1">
-          <Link href={`/luxury-egypt-tours/${slug}`}>
+          <Link href={`/${supSlug}/${slug}`}>
             <div className="relative w-full h-[213px] md:h-full">
               <Image
                 alt="tourImage"

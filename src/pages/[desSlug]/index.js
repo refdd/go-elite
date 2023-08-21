@@ -6,11 +6,8 @@ import NavBar from "@/components/nav/NavBar";
 import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
-import dynamic from "next/dynamic";
-const FilterContainer = dynamic(() =>
-  import("../../components/Filter/FilterContainer.jsx")
-);
-const From = dynamic(() => import("../../components/From/From.jsx"));
+import From from "@/components/From/From";
+
 function ListDestination({ packages, menus, logo, footer, socials }) {
   return (
     <div>
@@ -22,7 +19,7 @@ function ListDestination({ packages, menus, logo, footer, socials }) {
       </Head>
       <NavBar menus={menus} logo={logo} />
       <MainHead />
-      <FilterContainer />
+
       <div className="container mx-auto px-4 md:px-10    mt-10 grid grid-cols-1 gap-10 md:grid-cols-8">
         <div className="md:col-span-5">
           <ListTourContainer packages={packages} />

@@ -13,7 +13,7 @@ function LinksNav({ menus }) {
       {menus?.map((menu) => (
         <li key={menu?.id} className="relative group py-5">
           <div className="text-[#4E5255] capitalize text-[16px] font-sans font-medium hover:text-gray-900 transition-all cursor-pointer">
-            <Link href={`${menu?.slug}`}>
+            <Link href={`/${menu?.slug}`}>
               <span>{menu?.title}</span>
             </Link>
           </div>
