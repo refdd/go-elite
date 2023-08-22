@@ -47,7 +47,6 @@ body {
 }
 .myHeaderSlider,
 .singelSlider {
-  z-index: -1 !important;
 }
 .myHeaderSlider .swiper-button-prev,
 .myHeaderSlider .swiper-button-next {
@@ -60,6 +59,12 @@ body {
   font-size: 30px !important;
 }
 
+.sliderConteriner:hover .myHeaderSlider {
+  z-index: 1 !important;
+}
+.containerSingelSlider:hover .singelSlider {
+  z-index: 1 !important;
+}
 .sliderConteriner:hover .swiper-button-prev {
   display: flex !important;
 }

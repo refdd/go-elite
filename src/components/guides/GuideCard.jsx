@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-function GuideCard({ imgSrc, description, title }) {
+function GuideCard({ imgSrc, description, title, slug }) {
   return (
     <div className="my-5">
       <div className="flex flex-col gap-3 shadow-md rounded-[32px] ">
@@ -30,9 +31,11 @@ function GuideCard({ imgSrc, description, title }) {
           ></div>
           <div className=" flex justify-end ">
             <div className="py-2 px-6 cursor-pointer bg-transparent border-[1px] border-[#3d3d3d]  transition-all  rounded-md w-fit ">
-              <button className="text-[16px] text-[#3d3d3d] font-sans capitalize font-bold ">
-                Read more
-              </button>
+              <Link href={`/blog/${slug}`}>
+                <button className="text-[16px] text-[#3d3d3d] font-sans capitalize font-bold ">
+                  Read more
+                </button>
+              </Link>
             </div>
           </div>
         </div>

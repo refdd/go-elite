@@ -7,7 +7,7 @@ function SingelGallery({ imgsrc, title, Duration, reating }) {
   return (
     <div
       style={{ backgroundImage: `url(${imgsrc})` }}
-      className=" relative overflow-hidden   w-full bg-no-repeat  bg-cover bg-center  h-[400px] md:h-[500px] "
+      className=" relative overflow-hidden   w-full bg-no-repeat  bg-cover bg-center  h-[400px] md:h-[500px] -z-1 "
     >
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-10 md:-translate-y-1/2 w-full">
         <div className="container mx-auto px-4 md:px-10 ">

@@ -32,6 +32,7 @@ function GuideContainer({ wikis }) {
               imgSrc={wiki?.image?.image_url}
               description={wiki?.short_body}
               title={wiki?.title}
+              slug={wiki?.slug}
             />
           </SwiperSlide>
         ))}

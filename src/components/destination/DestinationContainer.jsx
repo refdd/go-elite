@@ -2,6 +2,7 @@ import React from "react";
 import CardDestination from "./CardDestination";
 
 function DestinationContainer({ destinations }) {
+  console.log(destinations);
   return (
     <div className="">
       <div className="grid  grid-cols-1 md:grid-cols-2 gap-5 ">
@@ -10,6 +11,7 @@ function DestinationContainer({ destinations }) {
             <CardDestination
               imgSrc={destination.image?.image_url}
               country={destination?.title}
+              slug={destination?.slug}
             />
           </div>
         ))}

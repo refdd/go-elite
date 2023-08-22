@@ -4,7 +4,7 @@ import "swiper/css";
 import SingelGallery from "./SingelGallery";
 function HeaderSingleTour({ title, Duration, reating, galleries, image }) {
   return (
-    <div>
+    <div className="containerSingelSlider">
       {!galleries.length == 0 ? (
         <Swiper className="singelSlider">
           {galleries?.map((galler, index) => (

@@ -10,7 +10,6 @@ import From from "@/components/From/From";
 
 function listcruises({ pages, menus, logo, footer, socials, faqs, cruises }) {
   const { image, meta, title, slug } = pages;
-  console.log(pages);
   return (
     <div>
       <Head>
