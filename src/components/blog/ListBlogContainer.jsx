@@ -7,6 +7,7 @@ function ListBlogContainer({ articles }) {
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {articles?.map((article) => (
           <CardBlog
+            key={article.id}
             article={article?.id}
             imgSrc={article?.image?.image_url}
             title={article?.title}
