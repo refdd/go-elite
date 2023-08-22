@@ -13,18 +13,26 @@ function ItineraryDays({ itineraries }) {
       <div className=" mt-5">
         <div className=" flex flex-col gap-5">
           {itineraries?.map((q, index) => (
-            <div key={index} className="  flex items-center gap-3   ">
-              <div className="w-12 h-12 mx-3 bg-[#01a8c3] rounded-full flex justify-center items-center">
-                <span className="text-[#fff] font-medium">{index + 1}</span>
-              </div>
+            <div
+              key={index}
+              className="  ml-14  rounded-lg  border border-[#00000020] bg-[#00000008]  "
+            >
               <button
-                className="flex  w-full items-center justify-between text-left   gap-2  border border-[#DDD]  py-5 px-3 rounded-lg  "
+                className="flex  w-full items-center justify-between text-left   gap-2   py-5 px-3 "
                 onClick={() => handleClick(index)}
               >
-                <div className=" flex items-center gap-2">
+                <div className=" relative flex items-center gap-2">
                   <h2 className=" text-textColor text-[15px] md:text-lg font-medium font-sans capitalize">
                     {q.title}
                   </h2>
+                  {/* index boll */}
+                  <div className="absolute top-1/2 -left-12 -translate-x-1/2 -translate-y-1/2">
+                    <div className="    w-12 h-12 px-3 bg-[#01a8c3] rounded-full flex justify-center items-center">
+                      <span className="text-[#fff] font-medium">
+                        {index + 1}
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div className="w-[20%] md:w-[10%] flex items-center justify-center">
                   <MdKeyboardArrowDown
@@ -39,7 +47,7 @@ function ItineraryDays({ itineraries }) {
                   dangerouslySetInnerHTML={{
                     __html: q.body,
                   }}
-                  className="mt-4 text-base text-gray-500"
+                  className="pt-4 text-base text-gray-500 px-3 border-t border-[#00000020]"
                 ></div>
               )}
             </div>

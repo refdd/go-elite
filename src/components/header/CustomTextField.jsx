@@ -35,7 +35,7 @@ function CustomTextField({
               "& input": {
                 backgroundColor: "#FFF", // Change input background color
                 color: "#82888E", // Change input text color
-                // Add padding
+
                 borderRadius: "8px",
               },
               " & ::before": {
@@ -46,6 +46,7 @@ function CustomTextField({
               },
               borderRadius: "8px",
               overflow: "hidden",
+              border: "1px solid #ced4da",
             }}
           />
         )}

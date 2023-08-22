@@ -58,8 +58,8 @@ function Singeltour({ singletour, faqs, menus, logo, footer, socials }) {
       />
       <SingleTaps value={tapsValue} handleChange={handleChangeTaps} />
       <div className="container mx-auto px-4 mt-10 md:px-10">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-8">
+          <div className="md:col-span-6">
             {tapsValue == 0 && (
               <>
                 <Overview
@@ -81,7 +81,7 @@ function Singeltour({ singletour, faqs, menus, logo, footer, socials }) {
             )}
             <LeaveReview />
           </div>
-          <div className="md:col-span-1">
+          <div className="md:col-span-2">
             <From />
           </div>
         </div>

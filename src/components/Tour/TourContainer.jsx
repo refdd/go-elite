@@ -6,7 +6,7 @@ import CardTour from "./CardTour";
 import { Navigation, Pagination } from "swiper/modules";
 function TourContainer({ packages }) {
   return (
-    <div className=" md:col-span-2 my-5 ">
+    <div className=" md:col-span-2 my-5 md:mx-4 ">
       <Swiper
         slidesPerView={3}
         spaceBetween={32}

@@ -16,12 +16,12 @@ function From() {
   };
   return (
     <div className=" md:sticky top-5">
-      <div className="rounded-3xl border-[#DEDEDE] border-[1px] bg-[#F5F5F5] overflow-hidden">
-        <div className="bg-[#01a8c3] py-8 flex justify-center items-center">
+      <div className="rounded-md border-[#DEDEDE] border-[1px]  overflow-hidden">
+        <div className="bg-[#01a8c3] py-5 flex justify-center items-center">
           <span className="text-3xl text-white font-bold">Inquire Now</span>
         </div>
         <FormProvider {...methods}>
-          <form className="grid grid-col-1 md:grid-cols-2 gap-3 py-3 px-5">
+          <form className="grid grid-col-1 md:grid-cols-2 gap-3 py-3 px-5 bg-[#f5f5f5]">
             {/*  name  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">

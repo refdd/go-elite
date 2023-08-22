@@ -83,8 +83,8 @@ function CardListTour({
                 </span>
               </div>
             </div>
-            <div className=" flex md:justify-end">
-              <div className="py-3 px-9 rounded-md cursor-pointer flex justify-center items-center bg-[#01a8c3] md:w-fit">
+            <div className=" flex md:justify-end md:items-end">
+              <div className="py-2 px-7 rounded-md cursor-pointer flex justify-center items-center bg-[#01a8c3] md:w-fit h-fit">
                 <Link href={`/${supSlug}/${slug}`}>
                   <button className="text-[#fff] text-lg font-sans font-medium capitalize">
                     View Tour

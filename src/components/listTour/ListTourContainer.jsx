@@ -3,7 +3,7 @@ import CardListTour from "./CardListTour";
 function ListTourContainer({ packages, cruisesSlug }) {
   return (
     <div className=" ">
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:gap-7">
         {packages?.map((tour) => (
           <CardListTour
             key={tour.id}
