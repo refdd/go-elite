@@ -10,6 +10,7 @@ function RalatedTour({ packages }) {
       <div className="grid grid-cols-1 gap-4 ">
         {packages?.map((tour) => (
           <CardTour
+            key={tour.id}
             id={tour.id}
             imgSrc={tour?.image?.image_url}
             title={tour?.destination?.title}
