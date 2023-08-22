@@ -16,7 +16,7 @@ function CardTour({
 }) {
   const [value, setValue] = useState(stars);
   return (
-    <div className="rounded-[6px] border border-[#00000020]   my-5  ">
+    <div className="rounded-[6px] border border-[#00000020]  ">
       <div className="flex flex-col gap-2 ">
         <div className="relative w-full h-[165px]">
           <Image

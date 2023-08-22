@@ -2,6 +2,7 @@ import React from "react";
 import HeaderSection from "../helper/HeaderSection";
 import GuideContainer from "./GuideContainer";
 import ButtonSeeAll from "../buttons/ButtonSeeAll";
+import Link from "next/link";
 
 function RowGuides({ wikis }) {
   return (
@@ -12,7 +13,9 @@ function RowGuides({ wikis }) {
       />
       <GuideContainer wikis={wikis} />
       <div className=" flex justify-end">
-        <ButtonSeeAll title={"See more"} />
+        <Link href={`/travel-guide`}>
+          <ButtonSeeAll title={"See more"} />
+        </Link>
       </div>
     </div>
   );
