@@ -29,14 +29,18 @@ function CustomTextField({
             label={label}
             fullWidth
             required={required}
-            variant="filled"
+            variant="outlined"
             id="outlined-required"
             sx={{
               "& input": {
                 backgroundColor: "#FFF", // Change input background color
                 color: "#82888E", // Change input text color
-
                 borderRadius: "8px",
+                padding: "11.5px 14px",
+              },
+              "& label": {
+                // transform: "translate(0, 12px) scale(1)", // Adjust the translation value as needed
+                color: "#82888E", // Change label color
               },
               " & ::before": {
                 display: "none",
@@ -45,8 +49,13 @@ function CustomTextField({
                 display: "none",
               },
               borderRadius: "8px",
-              overflow: "hidden",
+
               border: "1px solid #ced4da",
+            }}
+            InputLabelProps={{
+              style: {
+                // transform: "translate(14px, 14px) scale(1)", // Adjust the translation value as needed
+              },
             }}
           />
         )}

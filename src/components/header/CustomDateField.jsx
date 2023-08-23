@@ -16,10 +16,16 @@ function CustomDateField() {
         <DatePicker
           value={selectedDate}
           onChange={handleDateChange}
+          sx={{
+            "& input": {
+              padding: "11.5px 14px",
+              background: "#fff",
+            },
+          }}
           renderInput={(params) => <TextField {...params} />}
           slotProps={{
             textField: {
-              variant: "filled",
+              variant: "outlined",
               fullWidth: true,
               label: "Check-In Date",
             },

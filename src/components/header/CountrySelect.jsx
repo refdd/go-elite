@@ -3,12 +3,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-export default function CountrySelect() {
+export default function CountrySelect({ required }) {
   return (
     <Autocomplete
       id="country-select-demo"
       sx={{ width: "100%", backgroundColor: "transparent" }}
-      className="bg-white overflow-hidden rounded-lg"
+      className="bg-white border border-[#ced4da] rounded-lg !p-0"
       options={countries}
       autoHighlight
       getOptionLabel={(option) => option.label}
@@ -31,11 +31,13 @@ export default function CountrySelect() {
       renderInput={(params) => (
         <TextField
           {...params}
-          variant="filled"
+          variant="outlined"
           label="Nationality "
+          required
           sx={{
             "& .MuiInputBase-root": {
               backgroundColor: "transparent",
+              padding: 0.6,
             },
             " & ::before": {
               display: "none",

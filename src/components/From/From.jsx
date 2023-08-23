@@ -24,25 +24,36 @@ function From() {
             {/*  name  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <CustomTextField name="name" label="Name " type={"text"} />
+                <CustomTextField
+                  name="name"
+                  label="Name "
+                  type={"text"}
+                  required
+                />
               </div>
             </div>
             {/*  email  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <CustomTextField name="email" label="email " type={"text"} />
+                <CustomTextField
+                  name="email"
+                  label="email "
+                  type={"text"}
+                  required
+                />
               </div>
             </div>
             {/*  Nationality  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <CountrySelect />
+                <CountrySelect required />
               </div>
             </div>
             {/*  Number  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
                 <CustomTextField
+                  required
                   name="Number"
                   label="Number "
                   type={"number"}
@@ -52,19 +63,19 @@ function From() {
             {/*  Travelers  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <CounterTraveller />
+                <CounterTraveller required />
               </div>
             </div>
             {/*  check in date  */}
             <div className="">
               <div className=" flex flex-col gap-2">
-                <CustomDateField />
+                <CustomDateField required />
               </div>
             </div>
             {/*  check in date  */}
             <div className="">
               <div className=" flex flex-col gap-2">
-                <CustomDateField />
+                <CustomDateField required />
               </div>
             </div>
             {/*text message */}
