@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Checkbox from "@mui/material/Checkbox";
 import dynamic from "next/dynamic";
-import CountrySelect from "../header/CountrySelect";
-import CustomDateField from "../header/CustomDateField";
-import CounterTraveller from "../header/CounterTraveller";
-import CustomTextField from "../header/CustomTextField";
+const CountrySelect = dynamic(() => import("../header/CountrySelect"));
+const CustomDateField = dynamic(() => import("../header/CustomDateField"));
+const CounterTraveller = dynamic(() => import("../header/CounterTraveller"));
+const CustomTextField = dynamic(() => import("../header/CustomTextField"));
 function From() {
   const methods = useForm();
   const [checked, setChecked] = useState(false);
