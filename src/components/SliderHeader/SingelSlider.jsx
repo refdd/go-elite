@@ -10,6 +10,10 @@ function SingelSlider({ imgsrc, title, button }) {
     <div className="relative w-full h-[230px]  md:h-[530px]   ">
       <Image
         alt="tourImage"
+        loader={() => {
+          return `${modifiedImageUrl}`;
+        }}
+        unoptimized={true}
         src={modifiedImageUrl}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -19,8 +19,8 @@ function NavBar({ menus, logo }) {
       <div className="grid grid-cols-2 md:grid-cols-7  items-center  ">
         {/* logo  */}
         <div className="md:col-span-1">
-          <div className=" relative w-[100%] h-[80px] md:h-[70px]">
-            <Link href={"/"}>
+          <Link href={"/"}>
+            <div className=" relative w-[100%] h-[80px] md:h-[70px]">
               <Image
                 alt="logo"
                 src={logo?.image?.image_url}
@@ -32,8 +32,8 @@ function NavBar({ menus, logo }) {
                 blurDataURL={logo?.image?.image_url}
                 className=" "
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
         <MenuBar handelMenubar={handelMenubar} />
         {/* list nav */}
