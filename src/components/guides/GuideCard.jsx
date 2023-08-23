@@ -3,19 +3,23 @@ import Link from "next/link";
 import React from "react";
 
 function GuideCard({ imgSrc, description, title, slug }) {
+  const modifiedImageUrl = imgSrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/c_fill,w_500,h_500,f_webp/"
+  );
   return (
     <div className="my-5">
       <div className="flex flex-col gap-3 shadow-md rounded-[32px] ">
         <div className="relative w-full h-[251px] ">
           <Image
             alt="tourImage"
-            src={imgSrc}
+            src={modifiedImageUrl}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             loading="lazy"
             quality={60}
             placeholder="blur"
-            blurDataURL={imgSrc}
+            blurDataURL={modifiedImageUrl}
             className="rounded-t-[32px] object-cover"
           />
           <div className="absolute top-0 left-0 rounded-t-[32px] w-full h-full bg-gradient-to-tr from-[#0000004d] to-transparent "></div>

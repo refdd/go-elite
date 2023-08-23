@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import Rating from "@mui/material/Rating";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-const CustomRating = dynamic(() => import("../Rating/CustomRating"));
 function CardListTour({
   imgSrc,
   title,
@@ -48,7 +47,12 @@ function CardListTour({
                 </Link>
                 {/* stars */}
                 <div className="flex md:justify-end">
-                  <CustomRating value={value} />
+                  <Rating
+                    name="read-only"
+                    value={value}
+                    readOnly
+                    sx={{ color: "#ffd500" }}
+                  />
                 </div>
               </div>
             </div>

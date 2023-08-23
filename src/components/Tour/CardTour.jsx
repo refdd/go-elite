@@ -1,8 +1,8 @@
+import Rating from "@mui/material/Rating";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
-const CustomRating = dynamic(() => import("../Rating/CustomRating"));
+
 function CardTour({
   imgSrc,
   title,
@@ -42,7 +42,13 @@ function CardTour({
               {title}
             </p>
             <div className="">
-              <CustomRating value={value} />
+              <Rating
+                name="read-only"
+                value={value}
+                readOnly
+                size="2"
+                sx={{ fontSize: "16px", color: "#ffe234" }}
+              />
             </div>
           </div>
           {/* desc */}
