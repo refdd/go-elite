@@ -11,9 +11,8 @@ import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
-const SingleTaps = dynamic(() =>
-  import("../../components/singelTour/SingleTaps")
-);
+import SingleTaps from "@/components/singelTour/SingleTaps";
+
 const LeaveReview = dynamic(() =>
   import("../../components/singelTour/LeaveReview")
 );
