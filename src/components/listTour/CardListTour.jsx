@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import Rating from "@mui/material/Rating";
 import Link from "next/link";
+import { AiFillStar } from "react-icons/ai";
 function CardListTour({
   imgSrc,
   title,
@@ -13,8 +13,9 @@ function CardListTour({
   tour_type,
   supSlug,
 }) {
-  const [value, setValue] = useState(stars);
-
+  const starsE = Array.from({ length: stars }, (_, i) => (
+    <AiFillStar key={i} color="#ffd500" />
+  ));
   return (
     <div className="rounded-md bg-white shadow-md  ">
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 ">
@@ -47,12 +48,7 @@ function CardListTour({
                 </Link>
                 {/* stars */}
                 <div className="flex md:justify-end">
-                  <Rating
-                    name="read-only"
-                    value={value}
-                    readOnly
-                    sx={{ color: "#ffd500" }}
-                  />
+                  <div className="flex items-center gap-1">{starsE}</div>
                 </div>
               </div>
             </div>
