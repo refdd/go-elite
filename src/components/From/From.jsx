@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import dynamic from "next/dynamic";
 const CountrySelect = dynamic(() => import("../header/CountrySelect"));

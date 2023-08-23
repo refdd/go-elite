@@ -4,11 +4,12 @@ import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
 import RowGuides from "@/components/guides/RowGuides";
 import FAQs from "@/components/FAQs/FAQs";
-import Footer from "@/components/Footer/Footer";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Reviews from "@/components/Reviews/Reviews";
 import SliderHeader from "@/components/SliderHeader/SliderHeader";
 import FixdButton from "@/components/buttons/FixdButton";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("../components/Footer/Footer"));
 export default function Home({
   packages,
   destinations,

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import logoFooter from "../../../public/assets/image/logo.svg";
 import Link from "next/link";
 function Footer({ logo, footer, socials }) {
   return (
