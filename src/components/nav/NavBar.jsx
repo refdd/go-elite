@@ -23,10 +23,7 @@ function NavBar({ menus, logo }) {
             <div className=" relative w-[100%] h-[80px] md:h-[70px]">
               <Image
                 alt="logo"
-                loader={() => {
-                  return `${modifiedImageUrl}`;
-                }}
-                unoptimized={true}
+                src={modifiedImageUrl}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority={true}
