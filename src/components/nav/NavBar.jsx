@@ -10,6 +10,10 @@ function NavBar({ menus, logo }) {
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };
+  // const modifiedImageUrl = logo?.image?.image_url.replace(
+  //   "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+  //   "https://res.cloudinary.com/ddjuftfy2/image/upload/c_fill,w_500,h_500/"
+  // );
   return (
     <div className="container mx-auto px-4 py-4">
       <div className="grid grid-cols-2 md:grid-cols-7  items-center  ">

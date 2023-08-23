@@ -2,17 +2,21 @@ import Image from "next/image";
 import React from "react";
 
 function SingelSlider({ imgsrc, title, button }) {
+  const modifiedImageUrl = imgsrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp/"
+  );
   return (
     <div className="relative w-full h-[230px]  md:h-[530px]   ">
       <Image
         alt="tourImage"
-        src={imgsrc}
+        src={modifiedImageUrl}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority
         quality={60}
         placeholder="blur"
-        blurDataURL={imgsrc}
+        blurDataURL={modifiedImageUrl}
         className=" object-cover"
       />
       <div className="absolute top-0 left-0 bg-[#00000033] w-full h-full"></div>

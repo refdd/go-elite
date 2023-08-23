@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import CardTour from "./CardTour";
 import { Navigation, Pagination } from "swiper/modules";
 function TourContainer({ packages }) {
+  console.log(packages);
   return (
     <div className=" md:col-span-2 my-5 md:mx-4 ">
       <Swiper
