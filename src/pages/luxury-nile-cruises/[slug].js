@@ -9,11 +9,13 @@ import Trip_Information from "@/components/singelTour/Trip_Information";
 import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
-
+import dynamic from "next/dynamic";
 import ItineraryCruises from "@/components/singelTour/ItineraryCruises";
 import SingleTaps from "@/components/singelTour/SingleTaps";
-import LeaveReview from "@/components/singelTour/LeaveReview";
 
+const LeaveReview = dynamic(() =>
+  import("../../components/singelTour/LeaveReview")
+);
 function SingelCruises({ singletour, faqs, menus, logo, footer, socials }) {
   const [tapsValue, setTapsValue] = React.useState(0);
 
