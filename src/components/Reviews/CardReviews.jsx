@@ -1,23 +1,28 @@
-import Rating from "@mui/material/Rating";
 import Image from "next/image";
 import React, { useState } from "react";
+import { AiFillStar } from "react-icons/ai";
 
 function CardReviews({ imgSrc, title, name, palce, stars }) {
-  const [value, setValue] = useState(stars);
-
+  const starsE = Array.from({ length: stars }, (_, i) => (
+    <AiFillStar key={i} color="#ffd500" className="text-2xl" />
+  ));
+  const modifiedImageUrl = imgSrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/c_fill,w_56,h_56,f_webp/"
+  );
   return (
     <div className="relative pt-8">
       <div className="absolute top-0 left-4 w-16 h-16 bg-white rounded-full flex justify-center items-center">
         <div className="relative w-14 h-14  ">
           <Image
             alt="tourImage"
-            src={imgSrc}
+            src={modifiedImageUrl}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             loading="lazy"
             quality={60}
             placeholder="blur"
-            blurDataURL={imgSrc}
+            blurDataURL={modifiedImageUrl}
             className="rounded-full object-cover "
           />
         </div>
@@ -31,9 +36,7 @@ function CardReviews({ imgSrc, title, name, palce, stars }) {
               </p>
               <p className="text-sm text-[#3d3d3d] ">{palce}</p>
             </div>
-            <div className="">
-              <Rating name="read-only" value={value} readOnly />
-            </div>
+            <div className="flex items-center gap-1">{starsE}</div>
           </div>
           <p className="text-lg text-[#3d3d3d]">{title}</p>
         </div>
