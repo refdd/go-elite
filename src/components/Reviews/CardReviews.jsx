@@ -1,7 +1,7 @@
-import Rating from "@mui/material/Rating";
 import Image from "next/image";
 import React, { useState } from "react";
-
+import dynamic from "next/dynamic";
+const CustomRating = dynamic(() => import("../Rating/CustomRating"));
 function CardReviews({ imgSrc, title, name, palce, stars }) {
   const [value, setValue] = useState(stars);
 
@@ -32,7 +32,7 @@ function CardReviews({ imgSrc, title, name, palce, stars }) {
               <p className="text-sm text-[#3d3d3d] ">{palce}</p>
             </div>
             <div className="">
-              <Rating name="read-only" value={value} readOnly />
+              <CustomRating value={value} />
             </div>
           </div>
           <p className="text-lg text-[#3d3d3d]">{title}</p>

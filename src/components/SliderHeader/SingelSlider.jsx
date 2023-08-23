@@ -4,7 +4,7 @@ import React from "react";
 function SingelSlider({ imgsrc, title, button }) {
   const modifiedImageUrl = imgsrc.replace(
     "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
-    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp/"
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,e_improve/"
   );
   return (
     <div className="relative w-full h-[230px]  md:h-[530px]   ">
