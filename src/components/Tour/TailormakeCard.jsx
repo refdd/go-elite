@@ -28,7 +28,7 @@ function TailormakeCard() {
           </p>
         </div>
         <div className=" flex justify-end pb-4 px-3 mt-8">
-          <div className="py-2 px-6 w-[151px]  cursor-pointer bg-[#01a8c3] transition-all rounded-sm flex justify-center items-center gap-2 ">
+          <div className="py-2 px-6 w-[151px] h-[50px] cursor-pointer bg-[#01a8c3] transition-all rounded-[5px] flex justify-center items-center gap-2 ">
             <button className="text-[16px] text-white font-sans capitalize font-medium ">
               Inquire
             </button>

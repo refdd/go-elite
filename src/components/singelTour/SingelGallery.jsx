@@ -4,13 +4,18 @@ import { FaLocationArrow } from "react-icons/fa";
 import { LiaCalendarAltSolid } from "react-icons/lia";
 
 function SingelGallery({ imgsrc, title, Duration, reating }) {
+  const modifiedImageUrl = imgsrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,e_improve,h_530/"
+  );
   return (
     <div
-      style={{ backgroundImage: `url(${imgsrc})` }}
+      style={{ backgroundImage: `url(${modifiedImageUrl})` }}
       className=" relative overflow-hidden   w-full bg-no-repeat  bg-cover bg-center  h-[400px] md:h-[500px] -z-1 "
     >
+      <div className="absolute top-0 left-0 w-full h-full bg-[#00000080] "></div>
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-10 md:-translate-y-1/2 w-full">
-        <div className="container mx-auto px-4 md:px-10 ">
+        <div className="container mx-auto px-4  ">
           <div className="flex flex-col gap-7">
             <p className="text-2xl md:text-[52px] font-bold text-white ">
               {title}

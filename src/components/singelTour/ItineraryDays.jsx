@@ -47,7 +47,7 @@ function ItineraryDays({ itineraries }) {
                   dangerouslySetInnerHTML={{
                     __html: q.body,
                   }}
-                  className="pt-4 text-base text-gray-500 px-3 border-t border-[#00000020]"
+                  className="py-4 text-base text-gray-500 px-3 border-t border-[#00000020]"
                 ></div>
               )}
             </div>

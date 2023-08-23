@@ -13,6 +13,10 @@ function CardListTour({
   tour_type,
   supSlug,
 }) {
+  const modifiedImageUrl = imgSrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/c_fill,w_500,h_500,f_webp/"
+  );
   const starsE = Array.from({ length: stars }, (_, i) => (
     <AiFillStar key={i} color="#ffd500" />
   ));
@@ -24,13 +28,13 @@ function CardListTour({
             <div className="relative w-full h-[213px] md:h-full">
               <Image
                 alt="tourImage"
-                src={imgSrc}
+                src={modifiedImageUrl}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 loading="lazy"
                 quality={60}
                 placeholder="blur"
-                blurDataURL={imgSrc}
+                blurDataURL={modifiedImageUrl}
                 className="rounded-md object-cover md:rounded-l-md md:rounded-r-none"
               />
             </div>

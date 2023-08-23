@@ -11,7 +11,7 @@ function LeaveReview() {
 
   return (
     <div className="mt-10">
-      <div className=" py-5 px-5  md:py-10 md:px-10 bg-[#F5F5F5] border border-[#DEDEDE] rounded-[20px] ">
+      <div className=" py-5 px-5  md:py-10  bg-[#F5F5F5] border border-[#DEDEDE] rounded-[20px] ">
         <p className="text-xl text-[#3D3D3D] font-bold">Leave a review!</p>
         <FormProvider {...methods}>
           <form className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-5">

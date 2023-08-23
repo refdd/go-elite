@@ -21,7 +21,7 @@ function listcruises({ pages, menus, logo, footer, socials, faqs, cruises }) {
       <NavBar menus={menus} logo={logo} />
       <MainHead imgsrc={image?.image_url} title={title} />
 
-      <div className="container mx-auto px-4 md:px-10    mt-10 grid grid-cols-1 gap-10 md:grid-cols-8">
+      <div className="container mx-auto px-4     mt-10 grid grid-cols-1 gap-10 md:grid-cols-8">
         <div className="md:col-span-5">
           <ListTourContainer packages={cruises} cruisesSlug={slug} />
         </div>

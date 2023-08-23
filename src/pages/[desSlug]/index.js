@@ -29,7 +29,7 @@ function ListDestination({
       <NavBar menus={menus} logo={logo} />
       <MainHead imgsrc={image?.image_url} title={title} />
 
-      <div className="container mx-auto px-4 md:px-10    mt-10 ">
+      <div className="container mx-auto px-4     mt-10 ">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-8">
           <div className="md:col-span-6">
             <ListTourContainer packages={packages} />

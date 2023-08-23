@@ -26,10 +26,6 @@ function CardTour({
         <div className="relative w-full h-[165px]">
           <Image
             alt="tourImage"
-            loader={() => {
-              return `${modifiedImageUrl}`;
-            }}
-            unoptimized={true}
             src={modifiedImageUrl}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

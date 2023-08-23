@@ -58,7 +58,7 @@ function SingelCruises({ singletour, faqs, menus, logo, footer, socials }) {
         galleries={galleries}
       />
       <SingleTaps value={tapsValue} handleChange={handleChangeTaps} />
-      <div className="container mx-auto px-4 mt-10 md:px-10">
+      <div className="container mx-auto px-4 mt-10 ">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <div className="md:col-span-2">
             {tapsValue == 0 && (

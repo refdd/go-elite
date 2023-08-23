@@ -5,7 +5,7 @@ import TailormakeCard from "./TailormakeCard";
 
 function RowTour({ packages }) {
   return (
-    <div className="container  mx-auto px-4 mt-28 md:px-10 ">
+    <div className="container  mx-auto px-4 mt-28  ">
       <HeaderSection
         title={"Luxury Adventure Made Just For You"}
         desc={

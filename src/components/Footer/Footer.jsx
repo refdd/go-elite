@@ -4,10 +4,10 @@ import Link from "next/link";
 function Footer({ logo, footer, socials }) {
   return (
     <div className="  " id="footer">
-      <div className="flex justify-end">
-        <div className="border border-[#7a7a7a] w-[70%] my-10"></div>
-      </div>
       <div className="container mx-auto px-4">
+        <div className="flex justify-end">
+          <div className="border border-[#7a7a7a] w-[70%] my-10"></div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-7 py-6 ">
           {/* lgo */}
           <div className="">

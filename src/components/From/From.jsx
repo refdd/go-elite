@@ -17,7 +17,7 @@ function From() {
     <div className=" md:sticky top-5">
       <div className="rounded-md border-[#DEDEDE] border-[1px]  overflow-hidden">
         <div className="bg-[#01a8c3] py-5 flex justify-center items-center">
-          <span className="text-3xl text-white font-bold">Inquire Now</span>
+          <span className="text-2xl text-white font-bold">Inquire Now</span>
         </div>
         <FormProvider {...methods}>
           <form className="grid grid-col-1 md:grid-cols-2 gap-3 py-3 px-5 bg-[#f5f5f5]">

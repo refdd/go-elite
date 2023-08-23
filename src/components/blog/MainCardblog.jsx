@@ -4,21 +4,25 @@ import React from "react";
 import { IoIosArrowDropright } from "react-icons/io";
 
 function MainCardblog({ imgSrc, title, description, slug }) {
+  const modifiedImageUrl = imgSrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/c_fill,w_500,h_500,f_webp/"
+  );
   return (
-    <div className="container  mx-auto px-4 mt-10 md:px-10">
+    <div className="container  mx-auto px-4 mt-10 ">
       <p className="text-xl font-bold text-[#3d3d3d] capitalize mb-2">Blogs</p>
       <div className=" grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-0">
         <div className="md:col-span-1">
           <div className="relative w-full h-[276px] md:h-full roundedl-[30px]">
             <Image
               alt="tourImage"
-              src={imgSrc}
+              src={modifiedImageUrl}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               loading="lazy"
               quality={60}
               placeholder="blur"
-              blurDataURL={imgSrc}
+              blurDataURL={modifiedImageUrl}
               className="rounded-l-[30px] object-cover"
             />
           </div>

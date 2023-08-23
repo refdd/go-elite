@@ -1,6 +1,10 @@
 import React from "react";
 
 function HeaderSingBlog({ imgsrc, title }) {
+  const modifiedImageUrl = imgsrc.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,e_improve,h_530/"
+  );
   return (
     <div className="">
       <div
