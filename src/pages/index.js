@@ -5,7 +5,6 @@ import Head from "next/head";
 import RowGuides from "@/components/guides/RowGuides";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Reviews from "@/components/Reviews/Reviews";
-import SliderHeader from "@/components/SliderHeader/SliderHeader";
 import FixdButton from "@/components/buttons/FixdButton";
 import dynamic from "next/dynamic";
 const FAQs = dynamic(() => import("../components/FAQs/FAQs"));
@@ -32,7 +31,6 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar menus={menus} logo={logo} />
-      <SliderHeader sliders={sliders} />
       <RowTour packages={packages} />
       <RowDestination destinations={destinations} />
       <RowGuides wikis={wikis} />
