@@ -4,9 +4,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import SingelSlider from "./SingelSlider";
+
 function SliderHeader({ sliders }) {
   return (
-    <div>
+    <div className="sliderConteriner">
       <Swiper
         navigation={true}
         modules={[Navigation]}

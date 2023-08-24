@@ -1,46 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
 
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
 body {
   background-color: #fafafa;
 }
-.offers-container {
-  padding-bottom: 90px !important;
+
+.myTourSlides {
+  padding-bottom: 70px !important;
 }
-.offers-container .swiper-pagination {
+.myTourSlides .swiper-pagination {
   display: block !important;
   bottom: -4px !important;
+  /* left: -165px !important; */
+  padding-bottom: 20px;
 }
-.offers-container .swiper-pagination-bullet {
-  background-color: #ffffff !important;
+.myTourSlides .swiper-pagination-bullet {
+  background-color: #d6d6d6 !important;
   opacity: 1 !important;
   width: 14px !important;
   height: 14px !important;
 }
-.offers-container .swiper-pagination-bullet-active {
-  background-color: #009b72 !important;
+.myTourSlides .swiper-pagination-bullet-active {
+  background-color: #869791 !important;
 }
-.swiper-button-prev {
+.myTourSlides .swiper-button-prev,
+.myTourSlides .swiper-button-next {
+  top: var(--swiper-navigation-top-offset, 93%);
+  color: #f5f5f5 !important;
+  font-size: 10px !important;
+  font-weight: 900;
+  background: #000;
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+}
+.myTourSlides .swiper-button-prev:after,
+.myTourSlides .swiper-button-next:after {
+  font-size: 14px !important;
+}
+.myHeaderSlider .swiper-button-prev {
   display: none !important ;
 }
-.swiper-button-next {
+.myHeaderSlider .swiper-button-next {
   display: none !important ;
 }
-.swiper-button-prev,
-.swiper-button-next {
+.myHeaderSlider,
+.singelSlider {
+}
+.myHeaderSlider .swiper-button-prev,
+.myHeaderSlider .swiper-button-next {
   color: #f5f5f5 !important;
   font-size: 10px !important;
   font-weight: 900;
 }
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.myHeaderSlider .swiper-button-prev:after,
+.myHeaderSlider .swiper-button-next:after {
   font-size: 30px !important;
 }
 
-.myHeaderSlider:hover .swiper-button-prev {
+.sliderConteriner:hover .myHeaderSlider {
+  z-index: 1 !important;
+}
+.containerSingelSlider:hover .singelSlider {
+  z-index: 1 !important;
+}
+.sliderConteriner:hover .swiper-button-prev {
   display: flex !important;
 }
-.myHeaderSlider:hover .swiper-button-next {
+.sliderConteriner:hover .swiper-button-next {
   display: flex !important;
+}
+
+@media only screen and (max-width: 786px) {
+  .myTourSlides .swiper-pagination {
+    left: 0 !important;
+  }
+}
+@media only screen and (min-width: 786px) {
+  .MuiTabs-flexContainer.css-heg063-MuiTabs-flexContainer {
+    justify-content: space-around !important;
+  }
 }

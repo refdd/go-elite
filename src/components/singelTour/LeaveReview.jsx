@@ -1,23 +1,17 @@
 import React, { useState } from "react";
 import CustomTextField from "../header/CustomTextField";
 import { FormProvider, useForm } from "react-hook-form";
-import Button from "@mui/material/Button";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
 import InputLabel from "@mui/material/InputLabel";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 
 function LeaveReview() {
   const methods = useForm();
-  const [value, setValue] = useState(2);
+  const [value, setValue] = useState(0);
 
   return (
     <div className="mt-10">
-      <div className=" py-5 px-5  md:py-10 md:px-10 bg-[#F5F5F5] border border-[#DEDEDE] rounded-[20px] ">
+      <div className=" py-5 px-5  md:py-10  bg-[#F5F5F5] border border-[#DEDEDE] rounded-[20px] ">
         <p className="text-xl text-[#3D3D3D] font-bold">Leave a review!</p>
         <FormProvider {...methods}>
           <form className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-5">
@@ -27,10 +21,10 @@ function LeaveReview() {
             <div className="">
               <CustomTextField name="email" label="email " type={"email"} />
             </div>
-            <div className="">
+            <div className="md:col-span-2">
               <CustomTextField name="place" label="Place " type={"text"} />
             </div>
-            <div className="">
+            <div className="md:col-span-2">
               <div className="flex flex-col gap-4">
                 <Typography component="legend">Click to rate</Typography>
                 <Rating
@@ -42,7 +36,7 @@ function LeaveReview() {
                 />
               </div>
             </div>
-            <div className="">
+            <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
                 <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
                   Review title
@@ -54,27 +48,9 @@ function LeaveReview() {
                 />
               </div>
             </div>
-            <div className="">
-              <FormControl>
-                <FormLabel id="demo-row-radio-buttons-group-label">
-                  Would you recommend this trip for a friend?
-                </FormLabel>
-                <RadioGroup
-                  row
-                  aria-labelledby="demo-row-radio-buttons-group-label"
-                  name="row-radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="yes"
-                    control={<Radio />}
-                    label="yes"
-                  />
-                  <FormControlLabel value="no" control={<Radio />} label="no" />
-                </RadioGroup>
-              </FormControl>
-            </div>
+
             {/*text message */}
-            <div className=" mt-5  md:col-span-2">
+            <div className="   md:col-span-2">
               <div className="flex flex-col gap-2">
                 <textarea
                   id="message"
@@ -87,9 +63,16 @@ function LeaveReview() {
             </div>
             {/* buttonsent */}
             <div className=" md:col-span-2 ">
-              <Button variant="contained" disabled>
-                Submit
-              </Button>
+              <div className=" flex justify-center">
+                <button
+                  disabled
+                  className="flex  justify-center disabled:opacity-25 w-[140px] items-center py-3 bg-[#01a8c3] rounded-md cursor-pointer "
+                >
+                  <span className="text-[16px] font-medium text-white font-sans capitalize text-center">
+                    Add Review
+                  </span>
+                </button>
+              </div>
             </div>
           </form>
         </FormProvider>

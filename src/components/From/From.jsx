@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import CustomTextField from "../header/CustomTextField";
 import { FormProvider, useForm } from "react-hook-form";
-import InputLabel from "@mui/material/InputLabel";
-import CountrySelect from "../header/CountrySelect";
-import CounterTraveller from "../header/CounterTraveller";
-import CustomDateField from "../header/CustomDateField";
 import Checkbox from "@mui/material/Checkbox";
-
+import dynamic from "next/dynamic";
+const CountrySelect = dynamic(() => import("../header/CountrySelect"));
+const CustomDateField = dynamic(() => import("../header/CustomDateField"));
+const CounterTraveller = dynamic(() => import("../header/CounterTraveller"));
+const CustomTextField = dynamic(() => import("../header/CustomTextField"));
 function From() {
   const methods = useForm();
   const [checked, setChecked] = useState(false);
@@ -15,45 +14,46 @@ function From() {
     setChecked(event.target.checked);
   };
   return (
-    <div className="">
-      <div className="rounded-3xl border-[#DEDEDE] border-[1px] bg-[#F5F5F5] overflow-hidden">
-        <div className="bg-[#00229E] py-10"></div>
+    <div className=" md:sticky top-5">
+      <div className="rounded-md border-[#DEDEDE] border-[1px]  overflow-hidden">
+        <div className="bg-[#01a8c3] py-5 flex justify-center items-center">
+          <span className="text-2xl text-white font-bold">Inquire Now</span>
+        </div>
         <FormProvider {...methods}>
-          <form className="grid grid-col-1 md:grid-cols-2 gap-3 py-3 px-5">
+          <form className="grid grid-col-1 md:grid-cols-2 gap-3 py-3 px-5 bg-[#f5f5f5]">
             {/*  name  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  name
-                </InputLabel>
-                <CustomTextField name="name" label="Name " type={"text"} />
+                <CustomTextField
+                  name="name"
+                  label="Name "
+                  type={"text"}
+                  required
+                />
               </div>
             </div>
             {/*  email  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  email
-                </InputLabel>
-                <CustomTextField name="email" label="email " type={"text"} />
+                <CustomTextField
+                  name="email"
+                  label="email "
+                  type={"text"}
+                  required
+                />
               </div>
             </div>
             {/*  Nationality  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  Nationality
-                </InputLabel>
-                <CountrySelect />
+                <CountrySelect required />
               </div>
             </div>
             {/*  Number  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  Number
-                </InputLabel>
                 <CustomTextField
+                  required
                   name="Number"
                   label="Number "
                   type={"number"}
@@ -63,41 +63,29 @@ function From() {
             {/*  Travelers  */}
             <div className="md:col-span-2">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  Travelers
-                </InputLabel>
-                <CounterTraveller />
+                <CounterTraveller required />
               </div>
             </div>
             {/*  check in date  */}
             <div className="">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  check-in date
-                </InputLabel>
-                <CustomDateField />
+                <CustomDateField required />
               </div>
             </div>
             {/*  check in date  */}
             <div className="">
               <div className=" flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  Check-out date
-                </InputLabel>
-                <CustomDateField />
+                <CustomDateField required />
               </div>
             </div>
             {/*text message */}
             <div className=" mt-5  md:col-span-2">
               <div className="flex flex-col gap-2">
-                <InputLabel className="text-[16px] font-bold text-[#4E5255] capitalize">
-                  Travelers
-                </InputLabel>
                 <textarea
                   id="message"
                   rows="3"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
-                  placeholder="More Information"
+                  placeholder="Please detail your trip requirements and needs *"
                   {...methods.register("comment", { required: true })}
                 ></textarea>
               </div>
@@ -126,7 +114,7 @@ function From() {
             </div>
             {/* buttonsent */}
             <div className=" md:col-span-2 ">
-              <button className="flex justify-center items-center py-4 bg-[#00229E] rounded-md cursor-pointer w-full">
+              <button className="flex justify-center items-center py-4 bg-[#01a8c3] rounded-md cursor-pointer w-full">
                 <span className="text-[16px] font-medium text-white font-sans capitalize text-center">
                   INQUIRE NOW!
                 </span>

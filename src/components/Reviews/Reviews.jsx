@@ -4,7 +4,7 @@ import ReviewsContainer from "./ReviewsContainer";
 
 function Reviews({ allReviews }) {
   return (
-    <div className="container mx-auto px-4 md:px-10 mt-10">
+    <div className="container mx-auto px-4  mt-20">
       <HeaderSection
         title={"RECENT REVIEWS"}
         desc={"What people say about us"}

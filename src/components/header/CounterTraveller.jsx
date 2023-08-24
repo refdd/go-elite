@@ -4,7 +4,7 @@ import { ImMan } from "react-icons/im";
 import { FaChild } from "react-icons/fa";
 import { BsPersonAdd } from "react-icons/bs";
 import { MdOutlinePersonRemoveAlt1 } from "react-icons/md";
-function CounterTraveller() {
+function CounterTraveller({}) {
   const [aduits, setAduits] = useState(0);
   const [childs, setChilds] = useState(0);
   const handleAddCounter = (type) => {

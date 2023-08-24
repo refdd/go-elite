@@ -8,8 +8,8 @@ function PricesAccommodation({ accommodations }) {
         <div className="grid grid-cols-5 gap-0 rounded-t-2xl overflow-hidden border divide-y">
           {/* header */}
           <div className="col-span-2">
-            <div className="py-5 px-3 bg-[#00229E] flex justify-start items-center">
-              <span className="text-white font-bold text-lg">Months</span>
+            <div className="py-5 px-3 bg-[#01a8c3] flex justify-center items-center">
+              <span className="text-white font-bold text-lg">Diamond</span>
             </div>
           </div>
           <div className="col-span-2">
@@ -49,7 +49,7 @@ function PricesAccommodation({ accommodations }) {
                             {hotel.title}
                           </p>
                           <div className=" flex items-center gap-1">
-                            <MdBedroomParent className="text-lg text-[#00229E]" />
+                            <MdBedroomParent className="text-lg text-[#01a8c3]" />
                             <div
                               dangerouslySetInnerHTML={{
                                 __html: hotel.body,
@@ -67,8 +67,8 @@ function PricesAccommodation({ accommodations }) {
                   <div className="flex flex-col justify-center items-center h-full">
                     {accommodation?.prices?.map((price, i) => (
                       <div key={i} className="">
-                        <p className="text-[#3D3D3D] font-bold text-4xl">
-                          {price?.items[0]?.price_value}
+                        <p className="text-[#3D3D3D] font-bold text-4xl text-center">
+                          {price?.items[0]?.price_value} Prices
                         </p>
                       </div>
                     ))}
