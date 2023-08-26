@@ -1,35 +1,19 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MenuBar from "./MenuBar";
 import Link from "next/link";
 import ListMenu from "./ListMenu";
 import LinksNav from "./LinksNav";
 function NavBar({ menus, logo }) {
   const [menuBar, setMenuBar] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(false);
-  const checkMobileView = () => {
-    const mobileViewWidth = 768; // You can adjust this threshold according to your design
-    setIsMobileView(window.innerWidth < mobileViewWidth);
-  };
-  useEffect(() => {
-    checkMobileView();
-    window.addEventListener("resize", checkMobileView);
-    return () => {
-      window.removeEventListener("resize", checkMobileView);
-    };
-  }, []);
+
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };
-  const modifiedImageUrl = isMobileView
-    ? logo?.image?.image_url.replace(
-        "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
-        "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,w_90,h_60,e_improve/"
-      )
-    : logo?.image?.image_url.replace(
-        "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
-        "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp/"
-      );
+  const modifiedImageUrl = logo?.image?.image_url.replace(
+    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp/"
+  );
   return (
     <div className="container mx-auto px-4 py-4">
       <div className="grid grid-cols-2 md:grid-cols-8  items-center  ">
@@ -38,10 +22,6 @@ function NavBar({ menus, logo }) {
           <Link href={"/"}>
             <div className=" relative w-[100%] h-[80px] md:h-[70px]">
               <Image
-                loader={() => {
-                  return `${modifiedImageUrl}`;
-                }}
-                unoptimized={true}
                 alt="logo"
                 src={modifiedImageUrl}
                 fill
