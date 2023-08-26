@@ -6,8 +6,8 @@ import NavBar from "@/components/nav/NavBar";
 import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
-import dynamic from "next/dynamic";
-const From = dynamic(() => import("../../components/From/From"));
+import From from "@/components/From/From";
+
 function ListDestination({
   packages,
   menus,

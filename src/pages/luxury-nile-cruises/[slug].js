@@ -1,5 +1,6 @@
 import FAQs from "@/components/FAQs/FAQs";
 import Footer from "@/components/Footer/Footer";
+import From from "@/components/From/From";
 import NavBar from "@/components/nav/NavBar";
 import HeaderSingleTour from "@/components/singelTour/HeaderSingleTour";
 import Overview from "@/components/singelTour/Overview";
@@ -16,7 +17,7 @@ const SingleTaps = dynamic(() =>
 const LeaveReview = dynamic(() =>
   import("../../components/singelTour/LeaveReview")
 );
-const From = dynamic(() => import("../../components/From/From"));
+
 function SingelCruises({ singletour, faqs, menus, logo, footer, socials }) {
   const [tapsValue, setTapsValue] = React.useState(0);
 
