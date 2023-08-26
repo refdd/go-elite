@@ -15,35 +15,21 @@ function SingelSlider({ imgsrc, title, button }) {
       window.removeEventListener("resize", checkMobileView);
     };
   }, []);
-  const modifiedImageUrl = imgsrc.replace(
-    "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
-    "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,e_improve,h_530/"
-  );
+  const modifiedImageUrl = isMobileView
+    ? imgsrc.replace(
+        "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+        "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,b_gen_fill,c_pad,h_300,w_300/"
+      )
+    : imgsrc.replace(
+        "https://s3.eu-central-1.amazonaws.com/other.projects.storage/",
+        "https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp/"
+      );
+  // console.log(isMobileView);
   return (
     <div
-      style={{
-        background: !isMobileView && `url(${modifiedImageUrl})`,
-        backgroundRepeat: "no-repeat",
-      }}
-      className={
-        isMobileView
-          ? "relative w-full h-[230px]  md:h-[530px]"
-          : "relative overflow-hidden   w-full   !bg-cover !bg-center  h-[230px] md:h-[530px]  mt-10"
-      }
+      style={{ backgroundImage: `url(${modifiedImageUrl})` }}
+      className="relative overflow-hidden   w-full bg-no-repeat  bg-cover bg-center  h-[230px] md:h-[530px]  mt-10"
     >
-      {isMobileView && (
-        <Image
-          alt="tourImage"
-          src={modifiedImageUrl}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority
-          quality={60}
-          placeholder="blur"
-          blurDataURL={modifiedImageUrl}
-          className=" object-cover"
-        />
-      )}
       <div className="absolute top-0 left-0 bg-[#00000033] w-full h-full"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col gap-6 md:gap-10">
