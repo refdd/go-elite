@@ -2,7 +2,6 @@ import NavBar from "@/components/nav/NavBar";
 import RowTour from "@/components/Tour/RowTour ";
 import RowDestination from "@/components/destination/RowDestination";
 import Head from "next/head";
-import RowGuides from "@/components/guides/RowGuides";
 import { baseUrl, fetchApi } from "../../utils/featchApi";
 import Reviews from "@/components/Reviews/Reviews";
 import FixdButton from "@/components/buttons/FixdButton";
@@ -10,6 +9,7 @@ import dynamic from "next/dynamic";
 import HeaderVideo from "@/components/header/HeaderVideo";
 const FAQs = dynamic(() => import("../components/FAQs/FAQs"));
 const Footer = dynamic(() => import("../components/Footer/Footer"));
+const RowGuides = dynamic(() => import("../components/guides/RowGuides"));
 export default function Home({
   packages,
   destinations,
