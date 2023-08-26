@@ -6,8 +6,8 @@ import NavBar from "@/components/nav/NavBar";
 import Head from "next/head";
 import React from "react";
 import { baseUrl, fetchApi } from "../../../utils/featchApi";
-import From from "@/components/From/From";
-
+import dynamic from "next/dynamic";
+const From = dynamic(() => import("../../components/From/From"));
 function listcruises({ pages, menus, logo, footer, socials, faqs, cruises }) {
   const { image, meta, title, slug } = pages;
   return (
